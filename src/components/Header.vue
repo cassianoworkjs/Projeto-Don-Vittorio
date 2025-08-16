@@ -7,6 +7,7 @@
           <span class="tagline">Comida de Fogo</span>
         </router-link>
       </div>
+      <img src="../public/images/logo.png" alt="Logo" class="logo-img">
       <nav class="main-nav">
         <ul>
           <li><router-link to="/">Início</router-link></li>
@@ -84,14 +85,13 @@ export default {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
   .logo h1 {
     font-size: 2rem;
   }
-  
+
   .main-nav ul {
     gap: 1rem;
   }
 }
 </style>
-

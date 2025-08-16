@@ -36,9 +36,8 @@
             <div class="hero-image-container">
               <div class="image-placeholder">
                 <div class="placeholder-content">
-                  <div class="placeholder-icon">🥩</div>
-                  <h3>Churrasco Premium</h3>
-                  <p>Defumação Artesanal</p>
+                  <img src="../public/images/Don-Vittorio-capa.png" alt="Churrasco Premium" class="hero-image" />
+
                 </div>
               </div>
             </div>
@@ -52,17 +51,12 @@
       <div class="container">
         <div class="story-content">
           <div class="story-visual">
-            <div class="chef-image-container">
-              <div class="chef-placeholder">
-                <div class="chef-content">
-                  <img
-                    src="../public/images/Don Vittorio.jpg"
-                    alt="Chef DON Vittorio"
-                    class="chef-photo"
-                  />
-                  <h3>Chef DON Vittorio</h3>
-                  <p>Pitmaster Certificado</p>
-                </div>
+            <div class="chef-card">
+              <img src="../public/images/Don Vittorio.jpg" alt="Chef DON Vittorio" class="chef-photo" />
+              <div class="chef-title">
+                <h1 class="chef-name">DON Vittorio</h1>
+                <div class="separator"></div>
+                <h2 class="chef-subtitle">Pitmaster Certificado</h2>
               </div>
             </div>
           </div>
@@ -130,47 +124,39 @@
         </div>
 
         <div class="units-grid">
+          <!-- Loja Sudoeste -->
           <div class="unit-card">
             <div class="unit-image">
-              <div class="unit-placeholder">DON - Loja SW</div>
+              <img src="../public/images/sudoeste.png" alt="DON - Loja SW" />
             </div>
             <div class="unit-content">
               <h3>DONVITTORIO Sudoeste</h3>
-              <p class="unit-address">CLSW 100, bloco A, loja 21</p>
-              <router-link to="/menu/sudoeste" class="unit-link">
-                <span class="link-text">Cardápio</span>
-                <span class="link-icon">→</span>
-              </router-link>
+              <p class="unit-address">
+                <i class="bi bi-geo-alt-fill"></i> CLSW 100, bloco A, loja 21
+              </p>
+              <div class="unit-actions">
+                <router-link to="/menu/sudoeste" class="btn-cardapio">Cardápio</router-link>
+                <a href="https://www.google.com/maps?q=CLSW+100,+bloco+A,+loja+21" target="_blank" class="btn-mapa">Ver
+                  no mapa</a>
+              </div>
             </div>
           </div>
 
+          <!-- Loja Jardim Botânico -->
           <div class="unit-card">
             <div class="unit-image">
-              <div class="unit-placeholder">DON - Loja JB</div>
+              <img src="../public/images/jardim-botanico.png" alt="DON - Loja JB" />
             </div>
             <div class="unit-content">
               <h3>DONVITTORIO Jardim Botânico</h3>
-              <p class="unit-address">Av. San Diego, lote 17</p>
-              <router-link to="/menu/jardim" class="unit-link">
-                <span class="link-text">Cardápio</span>
-                <span class="link-icon">→</span>
-              </router-link>
-            </div>
-          </div>
-
-          <div class="unit-card featured">
-            <div class="unit-image">
-              <div class="unit-placeholder">DON - Buffet</div>
-            </div>
-            <div class="unit-content">
-              <h3>DONVITTORIO Buffet para eventos</h3>
-              <p class="unit-description">
-                Serviços premium para eventos e celebrações especiais
+              <p class="unit-address">
+                <i class="bi bi-geo-alt-fill"></i> Av. San Diego, lote 17
               </p>
-              <router-link to="/menu" class="unit-link">
-                <span class="link-text">Ver Opções</span>
-                <span class="link-icon">→</span>
-              </router-link>
+              <div class="unit-actions">
+                <router-link to="/menu/jardim" class="btn-cardapio">Cardápio</router-link>
+                <a href="https://www.google.com/maps?q=Av+San+Diego,+lote+17" target="_blank" class="btn-mapa">Ver no
+                  mapa</a>
+              </div>
             </div>
           </div>
         </div>
@@ -201,9 +187,7 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 45,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
+                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
               </div>
             </div>
           </div>
@@ -221,9 +205,7 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 35,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
+                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
               </div>
             </div>
           </div>
@@ -241,9 +223,7 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 25,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
+                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
               </div>
             </div>
           </div>
@@ -261,9 +241,7 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 35,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
+                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
               </div>
             </div>
           </div>
@@ -281,9 +259,7 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 30,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
+                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
               </div>
             </div>
           </div>
@@ -301,9 +277,7 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 36,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
+                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
               </div>
             </div>
           </div>
@@ -340,10 +314,8 @@ export default {
 </script>
 
 <style scoped>
-/* Importando fontes do Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
-/* Reset and Base Styles */
 * {
   box-sizing: border-box;
 }
@@ -362,7 +334,6 @@ export default {
   padding: 0 2rem;
 }
 
-/* Hero Section */
 .hero {
   position: relative;
   background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
@@ -388,11 +359,9 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 107, 53, 0.1) 0%,
-    rgba(255, 107, 53, 0.05) 100%
-  );
+  background: linear-gradient(45deg,
+      rgba(255, 107, 53, 0.1) 0%,
+      rgba(255, 107, 53, 0.05) 100%);
 }
 
 .hero-pattern {
@@ -401,7 +370,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23ffffff" stroke-width="0.1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23ffffff" stroke-width="0.1" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid )"/></svg>');
   opacity: 0.3;
 }
 
@@ -523,12 +492,10 @@ export default {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent);
   transition: left 0.5s ease;
 }
 
@@ -584,11 +551,18 @@ export default {
   position: relative;
 }
 
+.hero-image {
+  max-width: 100%;
+  height: auto;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
 .image-placeholder {
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid rgba(255, 107, 53, 0.3);
   border-radius: 20px;
-  padding: 4rem 3rem;
   backdrop-filter: blur(10px);
   text-align: center;
   transition: all 0.3s ease;
@@ -602,6 +576,7 @@ export default {
 
 .placeholder-content {
   color: #ff6b35;
+
 }
 
 .placeholder-icon {
@@ -623,7 +598,6 @@ export default {
   margin: 0;
 }
 
-/* Section Headers */
 .section-header {
   text-align: center;
   margin-bottom: 4rem;
@@ -645,7 +619,6 @@ export default {
   margin: 0 auto;
 }
 
-/* About Section */
 .about {
   padding: 8rem 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -719,7 +692,6 @@ export default {
   line-height: 1.6;
 }
 
-/* Specialties Section */
 .specialties {
   padding: 8rem 0;
   background: white;
@@ -816,7 +788,6 @@ export default {
   color: #ff8c42;
 }
 
-/* CTA Section */
 .cta {
   position: relative;
   background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
@@ -840,11 +811,9 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 107, 53, 0.1) 0%,
-    rgba(255, 107, 53, 0.05) 100%
-  );
+  background: linear-gradient(45deg,
+      rgba(255, 107, 53, 0.1) 0%,
+      rgba(255, 107, 53, 0.05) 100%);
 }
 
 .cta-pattern {
@@ -853,7 +822,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grill" patternUnits="userSpaceOnUse" width="40" height="40"><rect width="40" height="2" fill="rgba(255,255,255,0.05)" y="19"/></pattern></defs><rect width="100" height="100" fill="url(%23grill)"/></svg>');
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grill" patternUnits="userSpaceOnUse" width="40" height="40"><rect width="40" height="2" fill="rgba(255,255,255,0.05 )" y="19"/></pattern></defs><rect width="100" height="100" fill="url(%23grill)"/></svg>');
   opacity: 0.3;
 }
 
@@ -878,7 +847,6 @@ export default {
   line-height: 1.6;
 }
 
-/* Chef & Brand Story Section */
 .chef-story {
   position: relative;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
@@ -894,7 +862,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="chef-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23chef-pattern)"/></svg>');
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="chef-pattern" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="15" cy="15" r="1" fill="%23ffffff" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23chef-pattern )"/></svg>');
   opacity: 0.3;
 }
 
@@ -913,62 +881,30 @@ export default {
   align-items: center;
 }
 
-.chef-image-container {
-  position: relative;
-}
-
-.chef-placeholder {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 107, 53, 0.3);
-  border-radius: 20px;
-  padding: 4rem 3rem;
-  backdrop-filter: blur(10px);
+.chef-card {
+  background-color: #2d2d2d;
+  border: 2px solid rgba(255, 107, 53, 0.4);
+  border-radius: 24px;
+  padding: 2rem;
   text-align: center;
+  max-width: 380px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
 }
 
-.chef-placeholder::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 107, 53, 0.1),
-    transparent
-  );
-  transition: left 0.5s ease;
-}
-
-.chef-placeholder:hover::before {
-  left: 100%;
-}
-
-.chef-placeholder:hover {
-  border-color: rgba(255, 107, 53, 0.6);
+.chef-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(255, 107, 53, 0.2);
-}
-
-.chef-content {
-  color: #ff6b35;
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 107, 53, 0.7);
 }
 
 .chef-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 100%;
+  max-width: 350px;
+  border-radius: 16px;
   object-fit: cover;
-  margin-bottom: 1rem;
-  border: 4px solid rgba(255, 107, 53, 0.3);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 4px solid #ff6b35;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .chef-icon {
@@ -988,6 +924,48 @@ export default {
   font-size: 1rem;
   color: #b0b0b0;
   margin: 0;
+}
+
+.chef-title {
+  text-align: center;
+  /* Centraliza o conteúdo */
+  font-family: 'Playfair Display', serif;
+  /* Fonte elegante para o nome */
+  color: #111;
+  /* Cor padrão do texto */
+  margin: 2rem 1rem;
+}
+
+.chef-name {
+  font-size: 2.5rem;
+  /* Nome maior */
+  font-weight: bold;
+  letter-spacing: 2px;
+  /* Maiúsculas com espaçamento */
+  margin: 0;
+  color: #CFA15E;
+  /* Dourado sofisticado */
+}
+
+.separator {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, #CFA15E, #5C1A1A);
+  /* Degradê elegante */
+  margin: 0.5rem auto;
+  /* Centraliza a linha */
+  border-radius: 1px;
+}
+
+.chef-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  /* Fonte moderna para subtítulo */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  /* Cinza sofisticado */
+  margin: 0.5rem 0 0 0;
+  letter-spacing: 1px;
 }
 
 .story-text {
@@ -1016,10 +994,12 @@ export default {
 }
 
 @keyframes pulse {
+
   0%,
   100% {
     transform: scale(1);
   }
+
   50% {
     transform: scale(1.05);
   }
@@ -1096,12 +1076,10 @@ export default {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 107, 53, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 107, 53, 0.1),
+      transparent);
   transition: left 0.5s ease;
 }
 
@@ -1138,36 +1116,27 @@ export default {
 
 .units-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 2rem;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 2rem 0;
 }
 
 .unit-card {
-  background: white;
-  border-radius: 20px;
+  background: #fff;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid #f1f3f4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+  transition: transform .2s;
 }
 
 .unit-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
-.unit-card .unit-image {
+.unit-image img {
   width: 100%;
-  height: 200px; /* Adjust as needed */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-  overflow: hidden;
+  height: 200px;
+  object-fit: cover;
 }
 
 .unit-card .unit-placeholder {
@@ -1188,9 +1157,65 @@ export default {
   opacity: 0.8;
 }
 
-.unit-card .unit-content {
-  padding: 2rem;
-  flex-grow: 1;
+.unit-content {
+  padding: 1rem 1.2rem;
+}
+
+.unit-content h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #8B0000;
+  /* vermelho churrascaria */
+}
+
+.unit-address {
+  color: #333;
+  font-size: .95rem;
+  margin: .6rem 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+.unit-address i {
+  color: #8B0000;
+  font-size: 1.2rem;
+}
+
+.unit-actions {
+  display: flex;
+  gap: .8rem;
+}
+
+.btn-cardapio,
+.btn-mapa {
+  flex: 1;
+  padding: .6rem .8rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background .3s;
+}
+
+/* Botão Cardápio */
+.btn-cardapio {
+  background: #8B0000;
+  color: #fff;
+}
+
+.btn-cardapio:hover {
+  background: #a40000;
+}
+
+/* Botão Mapa */
+.btn-mapa {
+  background: #eee;
+  color: #333;
+}
+
+.btn-mapa:hover {
+  background: #ddd;
 }
 
 .unit-card .unit-content h3 {
@@ -1228,20 +1253,25 @@ export default {
 }
 
 .unit-card.featured {
-  grid-column: span 2; /* Make featured unit span two columns */
-  flex-direction: row; /* Arrange content horizontally */
+  grid-column: span 2;
+  /* Make featured unit span two columns */
+  flex-direction: row;
+  /* Arrange content horizontally */
   align-items: center;
   text-align: left;
-  padding: 0; /* Remove padding from the whole card */
+  padding: 0;
+  /* Remove padding from the whole card */
 }
 
 .unit-card.featured .unit-image {
-  width: 40%; /* Image takes 40% of the featured card width */
+  width: 40%;
+  /* Image takes 40% of the featured card width */
   height: 100%;
 }
 
 .unit-card.featured .unit-content {
-  width: 60%; /* Content takes 60% of the featured card width */
+  width: 60%;
+  /* Content takes 60% of the featured card width */
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -1321,8 +1351,10 @@ export default {
   }
 
   .unit-card.featured {
-    grid-column: span 1; /* Revert to single column for smaller screens */
-    flex-direction: column; /* Revert to column layout */
+    grid-column: span 1;
+    /* Revert to single column for smaller screens */
+    flex-direction: column;
+    /* Revert to column layout */
     align-items: center;
     text-align: center;
   }

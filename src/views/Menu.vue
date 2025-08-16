@@ -21,11 +21,7 @@
           <div class="location-selector">
             <label for="location">Unidade</label>
             <div class="select-wrapper">
-              <select
-                id="location"
-                v-model="selectedLocation"
-                @change="updateLocation"
-              >
+              <select id="location" v-model="selectedLocation" @change="updateLocation">
                 <option value="sudoeste">Sudoeste</option>
                 <option value="jardim">Jardim Botânico</option>
                 <option value="buffet">Buffet para Eventos</option>
@@ -43,15 +39,10 @@
         <!-- Category Navigation -->
         <nav class="category-nav">
           <div class="nav-container">
-            <button
-              v-for="category in categories"
-              :key="category.id"
-              :class="[
-                'category-btn',
-                { active: activeCategory === category.id },
-              ]"
-              @click="setActiveCategory(category.id)"
-            >
+            <button v-for="category in categories" :key="category.id" :class="[
+              'category-btn',
+              { active: activeCategory === category.id },
+            ]" @click="setActiveCategory(category.id)">
               <span class="btn-text">{{ category.name }}</span>
               <div class="btn-indicator"></div>
             </button>
@@ -60,34 +51,25 @@
 
         <!-- Menu Items -->
         <div class="menu-items">
-          <div
-            v-for="category in categories"
-            :key="category.id"
-            v-show="activeCategory === category.id"
-            class="category-section"
-          >
+          <div v-for="category in categories" :key="category.id" v-show="activeCategory === category.id"
+            class="category-section">
             <div class="category-header">
-              <h2
-                :class="[
-                  'category-title',
-                  {
-                    special:
-                      category.id === 'ponto-carne' ||
-                      category.id === 'don-vittorio-prime',
-                  },
-                ]"
-              >
+              <h2 :class="[
+                'category-title',
+                {
+                  special:
+                    category.id === 'ponto-carne' ||
+                    category.id === 'don-vittorio-prime',
+                },
+              ]">
                 {{ category.name }}
               </h2>
               <div class="category-line"></div>
             </div>
 
             <div class="items-grid">
-              <div
-                v-for="item in category.items"
-                :key="item.id"
-                :class="['menu-item', { 'info-item': item.price === 0 }]"
-              >
+              <div v-for="item in category.items" :key="item.id"
+                :class="['menu-item', { 'info-item': item.price === 0 }]">
                 <div class="item-image-container">
                   <img :src="item.image" :alt="item.name" class="item-photo" />
                   <div class="image-overlay"></div>
@@ -95,21 +77,15 @@
                     <span class="badge-text">COMBO</span>
                   </div>
                   <div class="item-price-badge">
-                    <span class="price-text"
-                      >R$ {{ item.price.toFixed(2) }}</span
-                    >
+                    <span class="price-text">R$ {{ item.price.toFixed(2) }}</span>
                   </div>
                 </div>
                 <div class="item-content">
                   <div class="item-header">
                     <h3 class="item-name">{{ item.name }}</h3>
                     <div class="item-tags">
-                      <span class="tag" v-if="item.combo"
-                        >Combo Disponível</span
-                      >
-                      <span class="tag premium" v-if="item.price > 40"
-                        >Premium</span
-                      >
+                      <span class="tag" v-if="item.combo">Combo Disponível</span>
+                      <span class="tag premium" v-if="item.price > 40">Premium</span>
                     </div>
                   </div>
                   <p class="item-description">{{ item.description }}</p>
@@ -118,11 +94,7 @@
                   <div v-if="item.donenessLevels" class="doneness-section">
                     <h4 class="doneness-title">Níveis de Ponto</h4>
                     <div class="doneness-grid">
-                      <div
-                        v-for="level in item.donenessLevels"
-                        :key="level.name"
-                        class="doneness-item"
-                      >
+                      <div v-for="level in item.donenessLevels" :key="level.name" class="doneness-item">
                         <div class="doneness-header">
                           <span class="doneness-name">{{ level.name }}</span>
                           <span class="doneness-time">{{ level.time }}</span>
@@ -158,23 +130,15 @@
       <div class="order-container">
         <div class="order-header">
           <h3>Seu Pedido</h3>
-          <span class="item-count"
-            >{{ orderItems.length }} item{{
-              orderItems.length > 1 ? "s" : ""
-            }}</span
-          >
+          <span class="item-count">{{ orderItems.length }} item{{
+            orderItems.length > 1 ? "s" : ""
+          }}</span>
         </div>
         <div class="order-items">
-          <div
-            v-for="(item, index) in orderItems"
-            :key="index"
-            class="order-item"
-          >
+          <div v-for="(item, index) in orderItems" :key="index" class="order-item">
             <div class="order-item-info">
               <span class="order-item-name">{{ item.name }}</span>
-              <span class="order-item-price"
-                >R$ {{ item.price.toFixed(2) }}</span
-              >
+              <span class="order-item-price">R$ {{ item.price.toFixed(2) }}</span>
             </div>
             <button @click="removeFromOrder(index)" class="remove-btn">
               <span>×</span>
@@ -214,7 +178,7 @@ export default {
               name: "O ponto da carne",
               description: "Preparamos de acordo com seu gosto. Escolha o seu.",
               price: 0,
-              image: "/src/public/images/ponto-carne.jpg.png",
+              image: "/images/ponto-carne.jpg.png",
               donenessLevels: [
                 {
                   name: "Mal passado",
@@ -259,7 +223,7 @@ export default {
               description:
                 "300g do delicioso Arroz Carreteiro feito com Bacon, Linguiça Calabresa e Brisket (Peito Bovino) ou Cupim Defumados, Tomate Pelatti, Tempero da Casa. Finalizado com Cebolinha Fresca e Pimenta Biquinho.",
               price: 25.0,
-              image: "/src/public/images/0.jpg",
+              image: "/images/0.jpg",
             },
             {
               id: "ancho-don",
@@ -771,7 +735,7 @@ export default {
 
 .menu {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: white;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
   color: #1a1a1a;
@@ -809,11 +773,9 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 107, 53, 0.1) 0%,
-    rgba(255, 107, 53, 0.05) 100%
-  );
+  background: linear-gradient(45deg,
+      rgba(255, 107, 53, 0.1) 0%,
+      rgba(255, 107, 53, 0.05) 100%);
 }
 
 .header-pattern {
@@ -842,11 +804,9 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 107, 53, 0.1) 0%,
-    rgba(255, 107, 53, 0.05) 100%
-  );
+  background: linear-gradient(45deg,
+      rgba(255, 107, 53, 0.1) 0%,
+      rgba(255, 107, 53, 0.05) 100%);
 }
 
 .header-content {
@@ -976,6 +936,7 @@ export default {
 /* Menu Content */
 .menu-content {
   padding: 5rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 /* Category Navigation */
@@ -1014,12 +975,10 @@ export default {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 107, 53, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 107, 53, 0.1),
+      transparent);
   transition: left 0.5s ease;
 }
 
@@ -1078,12 +1037,10 @@ export default {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 107, 53, 0.1),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 107, 53, 0.1),
+      transparent);
   transition: left 0.5s ease;
 }
 
@@ -1172,8 +1129,8 @@ export default {
 /* Menu Items Grid */
 .items-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
   margin-bottom: 2rem;
 }
 
@@ -1186,6 +1143,8 @@ export default {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
 }
 
 .menu-item:hover {
@@ -1194,22 +1153,42 @@ export default {
   border-color: rgba(255, 107, 53, 0.2);
 }
 
-.menu-item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
 .item-image-container {
   position: relative;
-  height: 200px;
+  height: 280px;
   overflow: hidden;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.item-image-container.loading::before {
+  opacity: 1;
 }
 
 .item-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Mantém proporção, preenche sem distorção */
+  object-position: center;
   transition: transform 0.4s ease;
+  display: block;
 }
 
 .menu-item:hover .item-photo {
@@ -1245,20 +1224,71 @@ export default {
   position: absolute;
   bottom: 1rem;
   left: 1rem;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.8);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem;
   border-radius: 12px;
-  font-size: 1rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+.item-content {
+  padding: 2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-header {
+  margin-bottom: 1rem;
+}
+
+.item-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.item-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tag.premium {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+  color: white;
+}
+
+.item-description {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  flex-grow: 1;
+  font-size: 0.95rem;
 }
 
 .menu-item.info-item {
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   color: white;
   border: 2px solid rgba(255, 107, 53, 0.3);
+  grid-column: 1 / -1;
 }
 
 .menu-item.info-item .item-content {
@@ -1290,11 +1320,9 @@ export default {
 .doneness-section {
   margin: 2rem 0;
   padding: 2rem;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 107, 53, 0.05) 0%,
-    rgba(255, 140, 66, 0.05) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 107, 53, 0.05) 0%,
+      rgba(255, 140, 66, 0.05) 100%);
   border-radius: 16px;
   border: 1px solid rgba(255, 107, 53, 0.1);
 }
@@ -1361,8 +1389,36 @@ export default {
   margin: 0;
 }
 
-/* Responsive adjustments for doneness section */
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .items-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .item-image-container {
+    height: 250px;
+  }
+}
+
 @media (max-width: 768px) {
+  .items-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .item-image-container {
+    height: 220px;
+  }
+
+  .item-content {
+    padding: 1.5rem;
+  }
+
+  .item-name {
+    font-size: 1.25rem;
+  }
+
   .doneness-section {
     padding: 1.5rem;
   }
@@ -1379,6 +1435,28 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .items-grid {
+    gap: 1rem;
+  }
+
+  .item-image-container {
+    height: 200px;
+  }
+
+  .item-content {
+    padding: 1rem;
+  }
+
+  .item-name {
+    font-size: 1.125rem;
+  }
+
+  .item-description {
+    font-size: 0.9rem;
   }
 }
 </style>
