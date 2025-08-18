@@ -36,8 +36,11 @@
             <div class="hero-image-container">
               <div class="image-placeholder">
                 <div class="placeholder-content">
-                  <img src="../public/images/Don-Vittorio-capa.png" alt="Churrasco Premium" class="hero-image" />
-
+                  <img
+                    src="../public/images/Don-Vittorio-capa.png"
+                    alt="Churrasco Premium"
+                    class="hero-image"
+                  />
                 </div>
               </div>
             </div>
@@ -52,7 +55,11 @@
         <div class="story-content">
           <div class="story-visual">
             <div class="chef-card">
-              <img src="../public/images/Don Vittorio.jpg" alt="Chef DON Vittorio" class="chef-photo" />
+              <img
+                src="../public/images/Don Vittorio.jpg"
+                alt="Chef DON Vittorio"
+                class="chef-photo"
+              />
               <div class="chef-title">
                 <h1 class="chef-name">DON Vittorio</h1>
                 <div class="separator"></div>
@@ -135,9 +142,15 @@
                 <i class="bi bi-geo-alt-fill"></i> CLSW 100, bloco A, loja 21
               </p>
               <div class="unit-actions">
-                <router-link to="/menu/sudoeste" class="btn-cardapio">Cardápio</router-link>
-                <a href="https://www.google.com/maps?q=CLSW+100,+bloco+A,+loja+21" target="_blank" class="btn-mapa">Ver
-                  no mapa</a>
+                <router-link to="/menu/sudoeste" class="btn-cardapio"
+                  >Cardápio</router-link
+                >
+                <a
+                  href="https://maps.app.goo.gl/ar8igWmMRFVP6dju8"
+                  target="_blank"
+                  class="btn-mapa"
+                  >Ver no mapa</a
+                >
               </div>
             </div>
           </div>
@@ -145,7 +158,10 @@
           <!-- Loja Jardim Botânico -->
           <div class="unit-card">
             <div class="unit-image">
-              <img src="../public/images/jardim-botanico.png" alt="DON - Loja JB" />
+              <img
+                src="../public/images/jardim-botanico.png"
+                alt="DON - Loja JB"
+              />
             </div>
             <div class="unit-content">
               <h3>DONVITTORIO Jardim Botânico</h3>
@@ -153,9 +169,15 @@
                 <i class="bi bi-geo-alt-fill"></i> Av. San Diego, lote 17
               </p>
               <div class="unit-actions">
-                <router-link to="/menu/jardim" class="btn-cardapio">Cardápio</router-link>
-                <a href="https://www.google.com/maps?q=Av+San+Diego,+lote+17" target="_blank" class="btn-mapa">Ver no
-                  mapa</a>
+                <router-link to="/menu/jardim" class="btn-cardapio"
+                  >Cardápio</router-link
+                >
+                <a
+                  href="https://maps.app.goo.gl/J5qWmp5svzuj67CG9"
+                  target="_blank"
+                  class="btn-mapa"
+                  >Ver no mapa</a
+                >
               </div>
             </div>
           </div>
@@ -176,7 +198,9 @@
         <div class="specialties-grid">
           <div class="specialty-card">
             <div class="card-header">
-              <div class="card-image">🥩</div>
+              <div class="card-image">
+                <img src="../public/images/18.jpg" alt="Brisket do DON" />
+              </div>
               <div class="card-badge">Mais Vendido</div>
             </div>
             <div class="card-content">
@@ -187,14 +211,18 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 45,00</span>
-                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
+                <router-link to="/menu" class="card-link"
+                  >Ver no Cardápio</router-link
+                >
               </div>
             </div>
           </div>
 
           <div class="specialty-card">
             <div class="card-header">
-              <div class="card-image">🍖</div>
+              <div class="card-image">
+                <img src="../public/images/11.jpg" alt="Ancho do DON" />
+              </div>
               <div class="card-badge">Premium</div>
             </div>
             <div class="card-content">
@@ -205,14 +233,18 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 35,00</span>
-                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
+                <router-link to="/menu" class="card-link"
+                  >Ver no Cardápio</router-link
+                >
               </div>
             </div>
           </div>
 
           <div class="specialty-card">
             <div class="card-header">
-              <div class="card-image">🍚</div>
+              <div class="card-image">
+                <img src="../public/images/12.jpg" alt="Carreteiro do DON" />
+              </div>
               <div class="card-badge">Tradicional</div>
             </div>
             <div class="card-content">
@@ -223,14 +255,18 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 25,00</span>
-                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
+                <router-link to="/menu" class="card-link"
+                  >Ver no Cardápio</router-link
+                >
               </div>
             </div>
           </div>
 
           <div class="specialty-card">
             <div class="card-header">
-              <div class="card-image">🥓</div>
+              <div class="card-image">
+                <img src="../public/images/13.jpg" alt="Costelinha do DON" />
+              </div>
               <div class="card-badge">Defumado</div>
             </div>
             <div class="card-content">
@@ -241,14 +277,18 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 35,00</span>
-                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
+                <router-link to="/menu" class="card-link"
+                  >Ver no Cardápio</router-link
+                >
               </div>
             </div>
           </div>
 
           <div class="specialty-card">
             <div class="card-header">
-              <div class="card-image">🍔</div>
+              <div class="card-image">
+                <img src="../public/images/14.jpg" alt="Burger do DON" />
+              </div>
               <div class="card-badge">Gourmet</div>
             </div>
             <div class="card-content">
@@ -259,14 +299,18 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 30,00</span>
-                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
+                <router-link to="/menu" class="card-link"
+                  >Ver no Cardápio</router-link
+                >
               </div>
             </div>
           </div>
 
           <div class="specialty-card">
             <div class="card-header">
-              <div class="card-image">🍟</div>
+              <div class="card-image">
+                <img src="../public/images/15.jpg" alt="Batata do DON" />
+              </div>
               <div class="card-badge">Especial</div>
             </div>
             <div class="card-content">
@@ -277,7 +321,9 @@
               </p>
               <div class="card-footer">
                 <span class="price">R$ 36,00</span>
-                <router-link to="/menu" class="card-link">Ver no Cardápio</router-link>
+                <router-link to="/menu" class="card-link"
+                  >Ver no Cardápio</router-link
+                >
               </div>
             </div>
           </div>
@@ -359,9 +405,11 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg,
-      rgba(255, 107, 53, 0.1) 0%,
-      rgba(255, 107, 53, 0.05) 100%);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 107, 53, 0.1) 0%,
+    rgba(255, 107, 53, 0.05) 100%
+  );
 }
 
 .hero-pattern {
@@ -492,10 +540,12 @@ export default {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -576,7 +626,6 @@ export default {
 
 .placeholder-content {
   color: #ff6b35;
-
 }
 
 .placeholder-icon {
@@ -811,9 +860,11 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg,
-      rgba(255, 107, 53, 0.1) 0%,
-      rgba(255, 107, 53, 0.05) 100%);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 107, 53, 0.1) 0%,
+    rgba(255, 107, 53, 0.05) 100%
+  );
 }
 
 .cta-pattern {
@@ -929,7 +980,7 @@ export default {
 .chef-title {
   text-align: center;
   /* Centraliza o conteúdo */
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   /* Fonte elegante para o nome */
   color: #111;
   /* Cor padrão do texto */
@@ -943,14 +994,14 @@ export default {
   letter-spacing: 2px;
   /* Maiúsculas com espaçamento */
   margin: 0;
-  color: #CFA15E;
+  color: #cfa15e;
   /* Dourado sofisticado */
 }
 
 .separator {
   width: 80px;
   height: 2px;
-  background: linear-gradient(to right, #CFA15E, #5C1A1A);
+  background: linear-gradient(to right, #cfa15e, #5c1a1a);
   /* Degradê elegante */
   margin: 0.5rem auto;
   /* Centraliza a linha */
@@ -958,7 +1009,7 @@ export default {
 }
 
 .chef-subtitle {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   /* Fonte moderna para subtítulo */
   font-size: 1rem;
   font-weight: 500;
@@ -994,7 +1045,6 @@ export default {
 }
 
 @keyframes pulse {
-
   0%,
   100% {
     transform: scale(1);
@@ -1076,10 +1126,12 @@ export default {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 107, 53, 0.1),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 107, 53, 0.1),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -1125,17 +1177,23 @@ export default {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
-  transition: transform .2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
 .unit-card:hover {
   transform: translateY(-5px);
 }
 
+.unit-image {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
 .unit-image img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -1164,43 +1222,43 @@ export default {
 .unit-content h3 {
   margin: 0;
   font-size: 1.25rem;
-  color: #8B0000;
+  color: #8b0000;
   /* vermelho churrascaria */
 }
 
 .unit-address {
   color: #333;
-  font-size: .95rem;
-  margin: .6rem 0 1rem;
+  font-size: 0.95rem;
+  margin: 0.6rem 0 1rem;
   display: flex;
   align-items: center;
-  gap: .4rem;
+  gap: 0.4rem;
 }
 
 .unit-address i {
-  color: #8B0000;
+  color: #8b0000;
   font-size: 1.2rem;
 }
 
 .unit-actions {
   display: flex;
-  gap: .8rem;
+  gap: 0.8rem;
 }
 
 .btn-cardapio,
 .btn-mapa {
   flex: 1;
-  padding: .6rem .8rem;
+  padding: 0.6rem 0.8rem;
   border-radius: 8px;
   text-align: center;
   font-weight: bold;
   text-decoration: none;
-  transition: background .3s;
+  transition: background 0.3s;
 }
 
 /* Botão Cardápio */
 .btn-cardapio {
-  background: #8B0000;
+  background: #8b0000;
   color: #fff;
 }
 

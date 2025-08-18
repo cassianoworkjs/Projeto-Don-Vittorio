@@ -21,7 +21,11 @@
           <div class="location-selector">
             <label for="location">Unidade</label>
             <div class="select-wrapper">
-              <select id="location" v-model="selectedLocation" @change="updateLocation">
+              <select
+                id="location"
+                v-model="selectedLocation"
+                @change="updateLocation"
+              >
                 <option value="sudoeste">Sudoeste</option>
                 <option value="jardim">Jardim Botânico</option>
                 <option value="buffet">Buffet para Eventos</option>
@@ -39,10 +43,15 @@
         <!-- Category Navigation -->
         <nav class="category-nav">
           <div class="nav-container">
-            <button v-for="category in categories" :key="category.id" :class="[
-              'category-btn',
-              { active: activeCategory === category.id },
-            ]" @click="setActiveCategory(category.id)">
+            <button
+              v-for="category in categories"
+              :key="category.id"
+              :class="[
+                'category-btn',
+                { active: activeCategory === category.id },
+              ]"
+              @click="setActiveCategory(category.id)"
+            >
               <span class="btn-text">{{ category.name }}</span>
               <div class="btn-indicator"></div>
             </button>
@@ -51,25 +60,34 @@
 
         <!-- Menu Items -->
         <div class="menu-items">
-          <div v-for="category in categories" :key="category.id" v-show="activeCategory === category.id"
-            class="category-section">
+          <div
+            v-for="category in categories"
+            :key="category.id"
+            v-show="activeCategory === category.id"
+            class="category-section"
+          >
             <div class="category-header">
-              <h2 :class="[
-                'category-title',
-                {
-                  special:
-                    category.id === 'ponto-carne' ||
-                    category.id === 'don-vittorio-prime',
-                },
-              ]">
+              <h2
+                :class="[
+                  'category-title',
+                  {
+                    special:
+                      category.id === 'ponto-carne' ||
+                      category.id === 'don-vittorio-prime',
+                  },
+                ]"
+              >
                 {{ category.name }}
               </h2>
               <div class="category-line"></div>
             </div>
 
             <div class="items-grid">
-              <div v-for="item in category.items" :key="item.id"
-                :class="['menu-item', { 'info-item': item.price === 0 }]">
+              <div
+                v-for="item in category.items"
+                :key="item.id"
+                :class="['menu-item', { 'info-item': item.price === 0 }]"
+              >
                 <div class="item-image-container">
                   <img :src="item.image" :alt="item.name" class="item-photo" />
                   <div class="image-overlay"></div>
@@ -77,15 +95,21 @@
                     <span class="badge-text">COMBO</span>
                   </div>
                   <div class="item-price-badge">
-                    <span class="price-text">R$ {{ item.price.toFixed(2) }}</span>
+                    <span class="price-text"
+                      >R$ {{ item.price.toFixed(2) }}</span
+                    >
                   </div>
                 </div>
                 <div class="item-content">
                   <div class="item-header">
                     <h3 class="item-name">{{ item.name }}</h3>
                     <div class="item-tags">
-                      <span class="tag" v-if="item.combo">Combo Disponível</span>
-                      <span class="tag premium" v-if="item.price > 40">Premium</span>
+                      <span class="tag" v-if="item.combo"
+                        >Combo Disponível</span
+                      >
+                      <span class="tag premium" v-if="item.price > 40"
+                        >Premium</span
+                      >
                     </div>
                   </div>
                   <p class="item-description">{{ item.description }}</p>
@@ -94,7 +118,11 @@
                   <div v-if="item.donenessLevels" class="doneness-section">
                     <h4 class="doneness-title">Níveis de Ponto</h4>
                     <div class="doneness-grid">
-                      <div v-for="level in item.donenessLevels" :key="level.name" class="doneness-item">
+                      <div
+                        v-for="level in item.donenessLevels"
+                        :key="level.name"
+                        class="doneness-item"
+                      >
                         <div class="doneness-header">
                           <span class="doneness-name">{{ level.name }}</span>
                           <span class="doneness-time">{{ level.time }}</span>
@@ -130,15 +158,23 @@
       <div class="order-container">
         <div class="order-header">
           <h3>Seu Pedido</h3>
-          <span class="item-count">{{ orderItems.length }} item{{
-            orderItems.length > 1 ? "s" : ""
-          }}</span>
+          <span class="item-count"
+            >{{ orderItems.length }} item{{
+              orderItems.length > 1 ? "s" : ""
+            }}</span
+          >
         </div>
         <div class="order-items">
-          <div v-for="(item, index) in orderItems" :key="index" class="order-item">
+          <div
+            v-for="(item, index) in orderItems"
+            :key="index"
+            class="order-item"
+          >
             <div class="order-item-info">
               <span class="order-item-name">{{ item.name }}</span>
-              <span class="order-item-price">R$ {{ item.price.toFixed(2) }}</span>
+              <span class="order-item-price"
+                >R$ {{ item.price.toFixed(2) }}</span
+              >
             </div>
             <button @click="removeFromOrder(index)" class="remove-btn">
               <span>×</span>
@@ -166,7 +202,7 @@ export default {
   data() {
     return {
       selectedLocation: "sudoeste",
-      activeCategory: "ponto-carne",
+      activeCategory: "don-todo-dia",
       orderItems: [],
       categories: [
         {
@@ -178,7 +214,7 @@ export default {
               name: "O ponto da carne",
               description: "Preparamos de acordo com seu gosto. Escolha o seu.",
               price: 0,
-              image: "/images/ponto-carne.jpg.png",
+              image: "src/public/images/ponto-carne.jpg.png",
               donenessLevels: [
                 {
                   name: "Mal passado",
@@ -223,7 +259,7 @@ export default {
               description:
                 "300g do delicioso Arroz Carreteiro feito com Bacon, Linguiça Calabresa e Brisket (Peito Bovino) ou Cupim Defumados, Tomate Pelatti, Tempero da Casa. Finalizado com Cebolinha Fresca e Pimenta Biquinho.",
               price: 25.0,
-              image: "/images/0.jpg",
+              image: "src/public/images/0.jpg",
             },
             {
               id: "ancho-don",
@@ -773,9 +809,11 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg,
-      rgba(255, 107, 53, 0.1) 0%,
-      rgba(255, 107, 53, 0.05) 100%);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 107, 53, 0.1) 0%,
+    rgba(255, 107, 53, 0.05) 100%
+  );
 }
 
 .header-pattern {
@@ -804,9 +842,11 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg,
-      rgba(255, 107, 53, 0.1) 0%,
-      rgba(255, 107, 53, 0.05) 100%);
+  background: linear-gradient(
+    45deg,
+    rgba(255, 107, 53, 0.1) 0%,
+    rgba(255, 107, 53, 0.05) 100%
+  );
 }
 
 .header-content {
@@ -975,10 +1015,12 @@ export default {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 107, 53, 0.1),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 107, 53, 0.1),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -1037,10 +1079,12 @@ export default {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
-      transparent,
-      rgba(255, 107, 53, 0.1),
-      transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 107, 53, 0.1),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -1320,9 +1364,11 @@ export default {
 .doneness-section {
   margin: 2rem 0;
   padding: 2rem;
-  background: linear-gradient(135deg,
-      rgba(255, 107, 53, 0.05) 0%,
-      rgba(255, 140, 66, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.05) 0%,
+    rgba(255, 140, 66, 0.05) 100%
+  );
   border-radius: 16px;
   border: 1px solid rgba(255, 107, 53, 0.1);
 }
