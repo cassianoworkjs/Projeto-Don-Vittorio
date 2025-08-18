@@ -29,8 +29,8 @@
 
 <script>
 export default {
-  name: 'Footer'
-}
+  name: "Footer",
+};
 </script>
 
 <style scoped>
@@ -56,19 +56,20 @@ export default {
 
 .footer-section h3 {
   color: #ff6b35;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
 .footer-section h4 {
   color: #ff6b35;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
 .footer-section p {
   margin-bottom: 0.5rem;
   line-height: 1.5;
+  font-size: 1rem;
 }
 
 .footer-bottom {
@@ -85,4 +86,3 @@ export default {
   }
 }
 </style>
-
