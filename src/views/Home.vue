@@ -1124,20 +1124,23 @@ export default {
 
 .achievements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1.5rem;
   text-align: center;
+  justify-items: center;
 }
 
 .achievement-item {
   background: rgba(255, 255, 255, 0.05);
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1rem;
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  width: 100%;
+  max-width: 140px;
 }
 
 .achievement-item::before {
@@ -1167,18 +1170,20 @@ export default {
 }
 
 .achievement-number {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
   font-weight: 900;
   color: #ff6b35;
   margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 .achievement-label {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: #b0b0b0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 500;
+  line-height: 1.2;
 }
 
 /* Units Section */
