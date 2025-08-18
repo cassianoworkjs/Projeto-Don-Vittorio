@@ -142,8 +142,12 @@
                 <i class="bi bi-geo-alt-fill"></i> CLSW 100, bloco A, loja 21
               </p>
               <div class="unit-actions">
-                <router-link to="/menu/sudoeste" class="btn-cardapio"
-                  >Cardápio</router-link
+                <a
+                  href="https://www.canva.com/design/DAGwbkIdudU/jmSJ_BrJ95jHBXq5cBwj6w/view"
+                  class="btn-cardapio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Cardápio</a
                 >
                 <a
                   href="https://maps.app.goo.gl/ar8igWmMRFVP6dju8"
@@ -169,8 +173,12 @@
                 <i class="bi bi-geo-alt-fill"></i> Av. San Diego, lote 17
               </p>
               <div class="unit-actions">
-                <router-link to="/menu/jardim" class="btn-cardapio"
-                  >Cardápio</router-link
+                <a
+                  href="https://www.canva.com/design/DAGwJwuett0/fKtpdn2SB5ocuuHrJRD9eQ/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-cardapio"
+                  >Cardápio</a
                 >
                 <a
                   href="https://maps.app.goo.gl/J5qWmp5svzuj67CG9"
@@ -199,7 +207,7 @@
           <div class="specialty-card">
             <div class="card-header">
               <div class="card-image">
-                <img src="../public/images/18.jpg" alt="Brisket do DON" />
+                <img src="/src/public/images/14.jpg" alt="Brisket do DON" />
               </div>
               <div class="card-badge">Mais Vendido</div>
             </div>
@@ -287,7 +295,7 @@
           <div class="specialty-card">
             <div class="card-header">
               <div class="card-image">
-                <img src="../public/images/14.jpg" alt="Burger do DON" />
+                <img src="/src/public/images/4.jpg" alt="Burger do DON" />
               </div>
               <div class="card-badge">Gourmet</div>
             </div>
@@ -769,7 +777,7 @@ export default {
 .card-header {
   position: relative;
   background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 2rem;
+  padding: 0;
   text-align: center;
 }
 
@@ -788,9 +796,21 @@ export default {
 }
 
 .card-image {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-content {
@@ -805,9 +825,10 @@ export default {
 }
 
 .card-content p {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
 }
 
 .card-footer {
