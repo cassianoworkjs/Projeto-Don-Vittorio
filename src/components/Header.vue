@@ -3,7 +3,10 @@
     <div class="header-container">
       <div class="logo">
         <router-link to="/">
-          <h1>DON VITTORIO</h1>
+          <div class="brand-logo">
+              <span class="logo-text">DON</span>
+              <span class="logo-accent">VITTORIO</span>
+            </div>
           <span class="tagline">Comida de Fogo</span>
         </router-link>
       </div>
@@ -79,7 +82,26 @@ export default {
   background-color: #ff6b35;
   color: white;
 }
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #ff6b35;
+  letter-spacing: -0.02em;
+}
+
+.logo-accent {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: -0.02em;
+}
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;

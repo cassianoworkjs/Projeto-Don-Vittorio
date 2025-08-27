@@ -33,15 +33,18 @@
             </div>
           </div>
           <div class="hero-visual">
-            <div class="hero-image-container">
-              <div class="image-placeholder">
-                <div class="placeholder-content">
-                  <img
-                    src="../public/images/Don-Vittorio-capa.png"
-                    alt="Churrasco Premium"
-                    class="hero-image"
-                  />
-                </div>
+            <div class="hero-gallery">
+              <div class="hero-tile">
+                <img src="../public/images/11.jpg" alt="Ancho" />
+              </div>
+              <div class="hero-tile">
+                <img src="../public/images/12.jpg" alt="Carreteiro" />
+              </div>
+              <div class="hero-tile">
+                <img src="../public/images/13.jpg" alt="Costelinha" />
+              </div>
+              <div class="hero-tile">
+                <img src="../public/images/14.jpg" alt="Brisket" />
               </div>
             </div>
           </div>
@@ -120,6 +123,8 @@
       </div>
     </section>
 
+    
+
     <!-- Units Section -->
     <section id="units" class="units">
       <div class="container">
@@ -193,152 +198,6 @@
       </div>
     </section>
 
-    <!-- Specialties Section -->
-    <section class="specialties">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Nossos Destaques</h2>
-          <p class="section-subtitle">
-            Pratos exclusivos que definem nossa identidade
-          </p>
-        </div>
-
-        <div class="specialties-grid">
-          <div class="specialty-card">
-            <div class="card-header">
-              <div class="card-image">
-                <img src="/src/public/images/14.jpg" alt="Brisket do DON" />
-              </div>
-              <div class="card-badge">Mais Vendido</div>
-            </div>
-            <div class="card-content">
-              <h3>Brisket do DON</h3>
-              <p>
-                O premiado Brisket (Peito Bovino) Angus, defumado por 12 horas,
-                finalizado com molho Barbecue
-              </p>
-              <div class="card-footer">
-                <span class="price">R$ 45,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="specialty-card">
-            <div class="card-header">
-              <div class="card-image">
-                <img src="../public/images/11.jpg" alt="Ancho do DON" />
-              </div>
-              <div class="card-badge">Premium</div>
-            </div>
-            <div class="card-content">
-              <h3>Ancho do DON</h3>
-              <p>
-                Steak de Ancho grill, finalizado com sal de parrilla. Acompanha
-                Farofa do DON® e Chimichurri
-              </p>
-              <div class="card-footer">
-                <span class="price">R$ 35,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="specialty-card">
-            <div class="card-header">
-              <div class="card-image">
-                <img src="../public/images/12.jpg" alt="Carreteiro do DON" />
-              </div>
-              <div class="card-badge">Tradicional</div>
-            </div>
-            <div class="card-content">
-              <h3>Carreteiro do DON</h3>
-              <p>
-                Arroz Carreteiro com Bacon, Linguiça Calabresa e Brisket
-                Defumados, finalizado com Cebolinha
-              </p>
-              <div class="card-footer">
-                <span class="price">R$ 25,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="specialty-card">
-            <div class="card-header">
-              <div class="card-image">
-                <img src="../public/images/13.jpg" alt="Costelinha do DON" />
-              </div>
-              <div class="card-badge">Defumado</div>
-            </div>
-            <div class="card-content">
-              <h3>Costelinha do DON</h3>
-              <p>
-                Costelinha Suína defumada, finalizada com molho barbecue.
-                Acompanha Farofa do DON®
-              </p>
-              <div class="card-footer">
-                <span class="price">R$ 35,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="specialty-card">
-            <div class="card-header">
-              <div class="card-image">
-                <img src="/src/public/images/4.jpg" alt="Burger do DON" />
-              </div>
-              <div class="card-badge">Gourmet</div>
-            </div>
-            <div class="card-content">
-              <h3>Burger do DON</h3>
-              <p>
-                Hamburguer blend de 180g, pão brioche, queijo, maionese grill e
-                molho barbecue
-              </p>
-              <div class="card-footer">
-                <span class="price">R$ 30,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="specialty-card">
-            <div class="card-header">
-              <div class="card-image">
-                <img src="../public/images/15.jpg" alt="Batata do DON" />
-              </div>
-              <div class="card-badge">Especial</div>
-            </div>
-            <div class="card-content">
-              <h3>Batata do DON</h3>
-              <p>
-                Batata frita crocante com Brisket defumado desfiado, cebolinha
-                fresca e pimenta biquinho
-              </p>
-              <div class="card-footer">
-                <span class="price">R$ 36,00</span>
-                <router-link to="/menu" class="card-link"
-                  >Ver no Cardápio</router-link
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Section -->
     <section class="cta">
       <div class="cta-background">
@@ -364,11 +223,53 @@
 <script>
 export default {
   name: "Home",
+  mounted() {
+    this.initGalleryFilter();
+  },
+  methods: {
+    initGalleryFilter() {
+      const categoryBtns = document.querySelectorAll(".category-btn");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      categoryBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active class from all buttons
+          categoryBtns.forEach((b) => b.classList.remove("active"));
+          // Add active class to clicked button
+          btn.classList.add("active");
+
+          const category = btn.getAttribute("data-category");
+
+          galleryItems.forEach((item) => {
+            const itemCategory = item.getAttribute("data-category");
+
+            if (category === "all" || itemCategory === category) {
+              item.style.display = "block";
+              item.style.animation = "fadeIn 0.5s ease-in-out";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+    },
+  },
 };
 </script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -749,115 +650,6 @@ export default {
   line-height: 1.6;
 }
 
-.specialties {
-  padding: 8rem 0;
-  background: white;
-}
-
-.specialties-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 2rem;
-}
-
-.specialty-card {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid #f1f3f4;
-}
-
-.specialty-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-}
-
-.card-header {
-  position: relative;
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 0;
-  text-align: center;
-}
-
-.card-badge {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-  color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.card-image {
-  position: relative;
-  display: block;
-  width: 100%;
-  margin: 0;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.card-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.card-content {
-  padding: 2rem;
-}
-
-.card-content h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 0 1rem 0;
-  color: #1a1a1a;
-}
-
-.card-content p {
-  color: #333;
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1.25rem;
-}
-
-.card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-}
-
-.price {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #ff6b35;
-}
-
-.card-link {
-  color: #ff6b35;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.875rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: color 0.3s ease;
-}
-
-.card-link:hover {
-  color: #ff8c42;
-}
-
 .cta {
   position: relative;
   background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
@@ -1000,23 +792,17 @@ export default {
 
 .chef-title {
   text-align: center;
-  /* Centraliza o conteúdo */
   font-family: "Playfair Display", serif;
-  /* Fonte elegante para o nome */
   color: #111;
-  /* Cor padrão do texto */
   margin: 2rem 1rem;
 }
 
 .chef-name {
   font-size: 2.5rem;
-  /* Nome maior */
   font-weight: bold;
   letter-spacing: 2px;
-  /* Maiúsculas com espaçamento */
   margin: 0;
   color: #cfa15e;
-  /* Dourado sofisticado */
 }
 
 .separator {
@@ -1184,6 +970,249 @@ export default {
   letter-spacing: 0.05em;
   font-weight: 500;
   line-height: 1.2;
+}
+
+/* Hero mosaic gallery */
+.hero-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 180px;
+  gap: 12px;
+  width: 520px;
+}
+
+.hero-gallery .hero-tile {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.hero-gallery .hero-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.hero-gallery .hero-tile:hover img {
+  transform: scale(1.06);
+}
+
+/* Destaques: nomes em cima, imagens embaixo */
+.featured-dishes {
+  margin: 2rem 0 3rem 0;
+}
+
+.featured-names {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
+  font-weight: 700;
+  color: #2e2e2e;
+}
+
+.featured-names span {
+  background: rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+}
+
+.featured-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.featured-item {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.featured-item img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .featured-names,
+  .featured-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gallery-categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.category-btn {
+  background: rgba(255, 107, 53, 0.1);
+  color: #ff6b35;
+  border: 2px solid rgba(255, 107, 53, 0.2);
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.category-btn:hover,
+.category-btn.active {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+  color: white;
+  border-color: #ff6b35;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-image {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.gallery-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover .gallery-image img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  padding: 2rem;
+  color: white;
+  width: 100%;
+}
+
+.overlay-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.overlay-content p {
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  margin: 0 0 1rem 0;
+  line-height: 1.5;
+}
+
+.overlay-content .price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ff6b35;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.overlay-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge.premium {
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+  color: white;
+}
+
+.badge.defumado {
+  background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+  color: white;
+}
+
+.badge.grelhado {
+  background: linear-gradient(135deg, #d2691e 0%, #cd853f 100%);
+  color: white;
+}
+
+.badge.tradicional {
+  background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+  color: white;
+}
+
+.badge.gourmet {
+  background: linear-gradient(135deg, #9932cc 0%, #ba55d3 100%);
+  color: white;
+}
+
+.badge.especial {
+  background: linear-gradient(135deg, #ff1493 0%, #ff69b4 100%);
+  color: white;
+}
+
+.gallery-cta {
+  text-align: center;
+  margin-top: 3rem;
 }
 
 /* Units Section */
@@ -1420,10 +1449,6 @@ export default {
     gap: 3rem;
   }
 
-  .specialties-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  }
-
   .chef-story .story-content {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -1501,15 +1526,23 @@ export default {
   }
 
   .about,
-  .specialties,
   .cta,
   .units {
     padding: 6rem 0;
   }
 
-  .specialties-grid {
-    grid-template-columns: 1fr;
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
+  }
+
+  .gallery-categories {
+    gap: 0.75rem;
+  }
+
+  .category-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
   }
 
   .feature-card {
@@ -1598,10 +1631,6 @@ export default {
     font-size: 2rem;
   }
 
-  .specialty-card {
-    margin: 0 1rem;
-  }
-
   .chef-story {
     padding: 6rem 0;
   }
@@ -1613,6 +1642,35 @@ export default {
   .achievements-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-categories {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .category-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 0.75rem 1rem;
+  }
+
+  .overlay-content {
+    padding: 1.5rem;
+  }
+
+  .overlay-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .overlay-content p {
+    font-size: 0.9rem;
   }
 
   .achievement-item {
