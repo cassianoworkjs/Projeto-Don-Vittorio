@@ -168,7 +168,7 @@ export default {
               name: "O ponto da carne",
               description: "Preparamos de acordo com seu gosto. Escolha o seu.",
               price: 0,
-              image: "../public/images/ponto-carne.jpg.png",
+              image: "../public/images/ponto-da-carne.png",
               donenessLevels: [
                 {
                   name: "Mal passado",
