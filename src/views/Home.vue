@@ -751,17 +751,20 @@ export default {
   letter-spacing: 1px;
 }
 
-.story-text {
-  max-width: 600px;
-}
+ .story-text {
+   max-width: 700px;
+   text-align: center;
+   margin: 0 auto;
+ }
 
-.story-header {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
+ .story-header {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   margin-bottom: 2rem;
+   flex-wrap: wrap;
+ }
 
 .expertise-badge {
   background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
@@ -787,46 +790,50 @@ export default {
   }
 }
 
-.story-title {
-  font-size: 3rem;
-  font-weight: 800;
-  margin: 0;
-  line-height: 1.1;
-  color: white;
-  letter-spacing: -0.02em;
-}
+ .story-title {
+   font-size: 3rem;
+   font-weight: 800;
+   margin: 0;
+   line-height: 1.1;
+   color: white;
+   letter-spacing: -0.02em;
+   text-align: center;
+ }
 
 .story-description {
   margin-bottom: 2rem;
 }
 
-.main-story {
-  font-size: 1.125rem;
-  color: #ccc;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
-}
+ .main-story {
+   font-size: 1.125rem;
+   color: #ccc;
+   line-height: 1.7;
+   margin-bottom: 1.5rem;
+   text-align: center;
+ }
 
-.secondary-story {
-  font-size: 1.125rem;
-  color: #b0b0b0;
-  line-height: 1.5;
-  margin-bottom: 2rem;
-}
+ .secondary-story {
+   font-size: 1.125rem;
+   color: #b0b0b0;
+   line-height: 1.7;
+   margin-bottom: 2rem;
+   text-align: center;
+ }
 
-.welcome-message {
-  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
-  color: white;
-  padding: 1.5rem 2rem;
-  border-radius: 25px;
-  font-size: 1.125rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
-  text-align: center;
-  transition: all 0.3s ease;
-}
+ .welcome-message {
+   background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+   color: white;
+   padding: 1.5rem 2rem;
+   border-radius: 25px;
+   font-size: 1.125rem;
+   font-weight: 600;
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
+   box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+   text-align: center;
+   transition: all 0.3s ease;
+   display: inline-block;
+ }
 
 .welcome-message:hover {
   transform: translateY(-2px);
@@ -841,18 +848,18 @@ export default {
   justify-items: center;
 }
 
-.achievement-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem 1rem;
-  border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  max-width: 140px;
-}
+ .achievement-item {
+   background: rgba(255, 255, 255, 0.05);
+   padding: 1.5rem 1rem;
+   border-radius: 16px;
+   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+   border: 1px solid rgba(255, 255, 255, 0.1);
+   transition: all 0.3s ease;
+   position: relative;
+   overflow: visible;
+   width: 100%;
+   max-width: 140px;
+ }
 
 .achievement-item::before {
   content: "";
@@ -861,12 +868,7 @@ export default {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 107, 53, 0.1),
-    transparent
-  );
+
   transition: left 0.5s ease;
 }
 
@@ -880,13 +882,14 @@ export default {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.achievement-number {
-  font-size: 2.25rem;
-  font-weight: 900;
-  color: #ff6b35;
-  margin-bottom: 0.5rem;
-  line-height: 1;
-}
+ .achievement-number {
+   font-size: 2.1rem;
+   font-weight: 900;
+   color: #ff6b35;
+   margin-bottom: 0.6rem;
+   line-height: 1;
+   white-space: nowrap;
+ }
 
 .achievement-label {
   font-size: 0.8rem;
@@ -1107,6 +1110,29 @@ export default {
   .section-title, .cta h2 {
     font-size: 2.5rem;
   }
+  .hero-gallery {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 140px;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .chef-story {
+    padding: 4rem 0;
+  }
+  .chef-card {
+    padding: 1rem;
+    max-width: 320px;
+  }
+  .chef-photo {
+    max-width: 300px;
+  }
+  .chef-name {
+    font-size: 1.8rem;
+  }
+  .story-title {
+    font-size: 2rem;
+  }
 }
 @media (max-width: 480px) {
   .section-title, .cta h2 {
@@ -1114,6 +1140,17 @@ export default {
   }
   .unit-actions {
     flex-direction: column;
+  }
+  .hero-gallery {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 160px;
+    width: 100%;
+  }
+  .chef-card {
+    max-width: 280px;
+  }
+  .chef-photo {
+    max-width: 260px;
   }
 }
 </style>

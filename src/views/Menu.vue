@@ -1160,6 +1160,10 @@ export default {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
   .info-card {
     grid-template-columns: 1fr;
   }
@@ -1180,14 +1184,47 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .menu-header {
+    padding: 4rem 0 3rem;
+  }
+
   .header-content {
     flex-direction: column;
     text-align: center;
     gap: 2rem;
+    align-items: center;
+  }
+
+  .brand-section {
+    width: 100%;
+    max-width: 100%;
   }
 
   .main-title {
     font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .location-selector {
+    width: 100%;
+    max-width: 280px;
+    align-items: center;
+  }
+
+  .location-selector select {
+    width: 100%;
+    min-width: auto;
+    padding: 0.875rem 2.5rem 0.875rem 1.25rem;
+    font-size: 0.95rem;
   }
 
   .logo-text,
@@ -1203,25 +1240,34 @@ export default {
     font-size: 2rem;
   }
 
+  .menu-content {
+    padding: 3rem 0;
+  }
+
   .menu-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
   }
 
   .category-nav {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .nav-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    padding: 0 0.5rem;
   }
 
   .category-btn {
     width: 100%;
-    max-width: 250px;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .doneness-header {
@@ -1229,15 +1275,41 @@ export default {
     align-items: flex-start;
     gap: 0.5rem;
   }
+
+  .menu-item {
+    border-radius: 16px;
+  }
+
+  .menu-image {
+    aspect-ratio: 16/10;
+  }
 }
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 1rem;
+    padding: 0 0.75rem;
+  }
+
+  .menu-header {
+    padding: 3rem 0 2rem;
   }
 
   .main-title {
     font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .location-selector {
+    max-width: 100%;
+  }
+
+  .location-selector select {
+    padding: 0.75rem 2.25rem 0.75rem 1rem;
+    font-size: 0.9rem;
   }
 
   .info-content {
@@ -1248,16 +1320,130 @@ export default {
     font-size: 1.5rem;
   }
 
+  .info-description {
+    font-size: 1rem;
+  }
+
+  .menu-content {
+    padding: 2rem 0;
+  }
+
+  .menu-grid {
+    gap: 1rem;
+  }
+
+  .category-nav {
+    margin-bottom: 2rem;
+  }
+
+  .nav-container {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0;
+  }
+
+  .category-btn {
+    padding: 0.875rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 20px;
+  }
+
+  .menu-item {
+    border-radius: 12px;
+  }
+
+  .menu-image {
+    aspect-ratio: 4/3;
+  }
+
   .overlay-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .overlay-content h3 {
     font-size: 1.25rem;
+    margin-bottom: 0.25rem;
   }
 
   .overlay-content p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .overlay-content .price {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .badge {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .doneness-item {
+    padding: 1rem;
+  }
+
+  .doneness-name {
+    font-size: 1rem;
+  }
+
+  .doneness-time {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .doneness-description {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.5rem;
+  }
+
+  .main-title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .category-btn {
+    padding: 0.75rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .info-content {
+    padding: 1.25rem;
+  }
+
+  .info-title {
+    font-size: 1.25rem;
+  }
+
+  .overlay-content {
+    padding: 1rem;
+  }
+
+  .overlay-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .overlay-content p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Make overlays visible on touch devices where hover is not available */
+@media (hover: none) {
+  .menu-overlay {
+    opacity: 1;
+  }
+  .overlay-content {
+    padding: 1rem;
   }
 }
 </style>
