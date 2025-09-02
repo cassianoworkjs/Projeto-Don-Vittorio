@@ -15,7 +15,22 @@
         <ul>
           <li><router-link to="/">Início</router-link></li>
           <li><router-link to="/menu">Cardápio</router-link></li>
-          <li><a href="#contato">Contato</a></li>
+          <li>
+            <a href="https://wa.me/5561993173292?text=Oi%20DONVITTORIO" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="social-btn whatsapp-btn">
+              <i class="bi bi-whatsapp"></i>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/donvittorio" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="social-btn instagram-btn">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </li>
         </ul>
       </nav>
     </div>
@@ -47,7 +62,7 @@ export default {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 0 2rem;
+   padding: 0 2.5rem;
    position: relative;
  }
 
@@ -71,7 +86,7 @@ export default {
  .main-nav ul {
    display: flex;
    list-style: none;
-   gap: 2rem;
+   gap: 1.5rem;
    flex-wrap: nowrap;
    align-items: center;
  }
@@ -80,15 +95,45 @@ export default {
   color: white;
   text-decoration: none;
   font-size: 1.1rem;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .main-nav a:hover,
 .main-nav a.router-link-active {
   background-color: #ff6b35;
   color: white;
+}
+
+/* Estilos para botões de redes sociais */
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  color: #1a1a1a;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  /* border-color: #ff6b35; */
+}
+
+.social-btn i {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
+
+.social-btn:hover i {
+  transform: scale(1.1);
+  /* color: #ff6b35; */
 }
  .brand-logo {
    display: flex;
@@ -192,16 +237,26 @@ export default {
     align-items: center;
     justify-content: center;
     padding: 0;
-    gap: 0.75rem;
+    gap: 1rem;
     flex-wrap: wrap;
   }
   .main-nav a {
     width: auto;
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 1rem;
     text-align: center;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 0.95rem;
     white-space: nowrap;
+  }
+  
+  /* Ajustes para os botões sociais no mobile */
+  .social-btn {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .social-btn i {
+    font-size: 1.2rem;
   }
 }
 

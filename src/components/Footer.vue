@@ -9,9 +9,10 @@
         </div>
         <div class="footer-section">
           <h4>Contato</h4>
-          <p>📍 Endereço: Rua dos Sabores, 123</p>
-          <p>📞 Telefone: (11) 1234-5678</p>
-          <p>✉️ Email: contato@donvittorio.com.br</p>
+          <p>📍 Endereço: Logradouro: Quadra Clsw 100 Bloco A Loja, 21</p> 
+          <p>CEP:70670-051</p>
+          <p>📞 Telefone: (61) 99317-3292</p>
+          <p>✉️ Email: donvitorios@outlook.com</p>
         </div>
         <div class="footer-section">
           <h4>Horários</h4>

@@ -9,15 +9,6 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <h1 class="hero-title">
-              <span class="title-main">Gastronomia</span>
-              <span class="title-sub">premium</span>
-              <span class="title-accent">feita no fogo.</span>
-            </h1>
-            <p class="hero-description">
-              O prazer da gastronomia premium, feita no fogo. Experimente e
-              sinta a diferença.
-            </p>
             <div class="hero-actions">
               <router-link to="/menu" class="btn btn-primary">
                 <span class="btn-text">Ver Cardápio</span>
@@ -29,6 +20,15 @@
               </a>
             </div>
           </div>
+          <h1 class="hero-title">
+              <span class="title-main">Gastronomia</span>
+              <span class="title-sub">premium</span>
+              <span class="title-accent">feita no fogo.</span>
+            </h1>
+            <p class="hero-description">
+              O prazer da gastronomia premium, feita no fogo. Experimente e
+              sinta a diferença.
+            </p>
           <div class="hero-visual">
             <div class="hero-gallery">
               <div class="hero-tile">
@@ -43,6 +43,7 @@
               <div class="hero-tile">
                 <img src="/images/14.jpg" alt="Brisket" />
               </div>
+              
             </div>
           </div>
         </div>
