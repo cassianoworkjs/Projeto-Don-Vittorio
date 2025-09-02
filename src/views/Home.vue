@@ -70,9 +70,9 @@
 
           <div class="story-text">
             <div class="story-header">
-              <div class="expertise-badge">
+              <!-- <div class="expertise-badge">
                 <span class="badge-text">PITMASTER</span>
-              </div>
+              </div> -->
               <h2 class="story-title">A História do DON</h2>
             </div>
 
@@ -96,7 +96,6 @@
                 <span class="welcome-text">Que bom ter você conosco.</span>
               </div>
             </div>
-
             <div class="achievements-grid">
               <div class="achievement-item">
                 <div class="achievement-number">13+</div>
@@ -383,7 +382,7 @@ export default {
 
 .hero-text {
   max-width: 600px;
-  text-align: left;
+  text-align: center;
 }
 
 .badge-text {
@@ -739,9 +738,10 @@ export default {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  color: #555;
+  color: #ff6b35;
   margin: 0.5rem 0 0 0;
   letter-spacing: 1px;
+  
 }
 
  .story-text {
@@ -795,10 +795,11 @@ export default {
 
 .story-description {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
  .main-story {
-   font-size: 1.125rem;
+   font-size: 1.325rem;
    color: #ccc;
    line-height: 1.7;
    margin-bottom: 1.5rem;
@@ -806,7 +807,7 @@ export default {
  }
 
  .secondary-story {
-   font-size: 1.125rem;
+   font-size: 1.325rem;
    color: #b0b0b0;
    line-height: 1.7;
    margin-bottom: 2rem;
