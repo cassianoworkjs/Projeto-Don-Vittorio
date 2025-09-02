@@ -18,35 +18,34 @@
                O prazer da gastronomia premium, feita no fogo. Experimente e
                sinta a diferença.
              </p>
-             <div class="hero-actions">
-               <router-link to="/menu?category=don-todo-dia" class="btn btn-primary">
-                 <span class="btn-text">Ver Cardápio</span>
-                 <span class="btn-icon">→</span>
-               </router-link>
-               <a href="#units" class="btn btn-secondary">
-                 <span class="btn-text">Nossas Unidades</span>
-                 <span class="btn-icon">↓</span>
-               </a>
+           </div>
+           <div class="hero-visual">
+             <div class="hero-gallery">
+               <div class="hero-tile">
+                 <img src="/images/11.jpg" alt="Ancho" />
+               </div>
+               <div class="hero-tile">
+                 <img src="/images/12.jpg" alt="Carreteiro" />
+               </div>
+               <div class="hero-tile">
+                 <img src="/images/13.jpg" alt="Costelinha" />
+               </div>
+               <div class="hero-tile">
+                 <img src="/images/14.jpg" alt="Brisket" />
+               </div>
              </div>
            </div>
-            <div class="hero-visual">
-            <div class="hero-gallery">
-              <div class="hero-tile">
-                <img src="/images/11.jpg" alt="Ancho" />
-              </div>
-              <div class="hero-tile">
-                <img src="/images/12.jpg" alt="Carreteiro" />
-              </div>
-              <div class="hero-tile">
-                <img src="/images/13.jpg" alt="Costelinha" />
-              </div>
-              <div class="hero-tile">
-                <img src="/images/14.jpg" alt="Brisket" />
-              </div>
-              
-            </div>
-          </div>
-        </div>
+           <div class="hero-actions">
+             <router-link to="/menu?category=don-todo-dia" class="btn btn-primary">
+               <span class="btn-text">Ver Cardápio</span>
+               <span class="btn-icon">→</span>
+             </router-link>
+             <a href="#units" class="btn btn-primary">
+               <span class="btn-text">Nossas Unidades</span>
+               <span class="btn-icon">↓</span>
+             </a>
+           </div>
+         </div>
       </div>
     </section>
 
@@ -1096,16 +1095,19 @@ export default {
 @media (max-width: 768px) {
   .hero-content {
     gap: 2rem;
+    
   }
   
   .hero-text {
-    order: 1;
+    order:1;
   }
   
   .hero-visual {
     order: 2;
   }
-  
+  .hero-actions {
+    order: 2;
+  }
   .title-main {
     font-size: 2.5rem;
   }
