@@ -24,7 +24,7 @@
               >
                 <option value="sudoeste">Sudoeste</option>
                 <option value="jardim">Jardim Botânico</option>
-                <option value="buffet">Buffet para Eventos</option>
+                <!-- <option value="buffet">Buffet para Eventos</option> -->
               </select>
               <div class="select-arrow">▼</div>
             </div>
@@ -44,9 +44,11 @@
               :key="category.id"
               :class="[
                 'category-btn',
-                { active: activeCategory === category.id },
+                { active: activeCategoryId === category.id },
               ]"
               @click="setActiveCategory(category.id)"
+              :aria-pressed="activeCategoryId === category.id"
+              type="button"
             >
               <span class="btn-text">{{ category.name }}</span>
             </button>
@@ -58,7 +60,7 @@
           <div
             v-for="category in categories"
             :key="category.id"
-            v-show="activeCategory === category.id"
+            v-show="activeCategoryId === category.id"
             class="category-section"
           >
             <!-- Special Info Items -->
@@ -117,6 +119,7 @@
                 v-for="item in category.items"
                 :key="item.id"
                 class="menu-item"
+                @click="selectItem(item)"
               >
                 <div class="menu-image">
                   <img :src="item.image" :alt="item.name" />
@@ -148,6 +151,27 @@
         </div>
       </div>
     </section>
+
+    <!-- Item Modal -->
+    <div v-if="showItemModal" class="modal-overlay" @click="closeItemModal">
+      <div class="modal-content" @click.stop>
+        <button class="modal-close" @click="closeItemModal">×</button>
+        <div class="modal-image">
+          <img :src="selectedItem?.image" :alt="selectedItem?.name" />
+        </div>
+        <div class="modal-info">
+          <h2 class="modal-title">{{ selectedItem?.name }}</h2>
+          <p class="modal-description">{{ selectedItem?.description }}</p>
+          <div class="modal-price">R$ {{ selectedItem?.price.toFixed(2) }}</div>
+          <div class="modal-badges">
+            <span v-if="selectedItem?.combo" class="badge combo">Combo</span>
+            <span v-if="selectedItem?.price > 40" class="badge premium">Premium</span>
+            <span v-if="selectedItem?.price <= 20" class="badge tradicional">Tradicional</span>
+            <span v-if="selectedItem?.price > 20 && selectedItem?.price <= 40" class="badge especial">Especial</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -158,6 +182,8 @@ export default {
     return {
       selectedLocation: "sudoeste",
       activeCategory: "ponto-carne",
+      selectedItem: null,
+      showItemModal: false,
       categories: [
         {
           id: "ponto-carne",
@@ -168,7 +194,7 @@ export default {
               name: "O ponto da carne",
               description: "Preparamos de acordo com seu gosto. Escolha o seu.",
               price: 0,
-              image: "../public/images/ponto-da-carne.png",
+              image: "/images/ponto-da-carne.png",
               donenessLevels: [
                 {
                   name: "Mal passado",
@@ -213,7 +239,7 @@ export default {
               description:
                 "300g do delicioso Arroz Carreteiro feito com Bacon, Linguiça Calabresa e Brisket (Peito Bovino) ou Cupim Defumados, Tomate Pelatti, Tempero da Casa. Finalizado com Cebolinha Fresca e Pimenta Biquinho.",
               price: 25.0,
-              image: "../public/images/0.jpg",
+              image: "/images/0.jpg",
             },
             {
               id: "ancho-don",
@@ -221,7 +247,7 @@ export default {
               description:
                 "250g (In natura) de Steak de Ancho grill, finalizado com sal de parrilla. Acompanha 40g de Farofa do DON® e 40g de Molho Chimichurri.",
               price: 40.0,
-              image: "../public/images/1.jpg",
+              image: "/images/1.jpg",
             },
             {
               id: "costelinha-don",
@@ -229,7 +255,7 @@ export default {
               description:
                 "250g de Costelinha Suína defumada, finalizada com molho barbecue. Acompanha 40g de Farofa do DON®.",
               price: 40.0,
-              image: "../public/images/2.jpg",
+              image: "/images/2.jpg",
             },
             {
               id: "linguica-artesanal",
@@ -237,7 +263,7 @@ export default {
               description:
                 "300g de Linguiça de Costela bovina Angus Cara Preta® fininha, feita na brasa. Acompanha 40g de Farofa do DON® e 40g de molho chimichurri.",
               price: 40.0,
-              image: "../public/images/3.jpg",
+              image: "/images/3.jpg",
             },
             {
               id: "burger-don",
@@ -245,7 +271,7 @@ export default {
               description:
                 "Hamburguer blend de 180g (in natura), pão brioche, queijo fatiado, maionese grill e molho barbecue, grelhado na Parrilla e cortado ao meio.",
               price: 34.0,
-              image: "../public/images/4.jpg",
+              image: "/images/4.jpg",
             },
             {
               id: "burger-bacon-don",
@@ -253,7 +279,7 @@ export default {
               description:
                 "Hamburguer blend de 180g (in natura), pão brioche, queijo fatiado, bacon maionese grill e molho barbecue, grelhado na Parrilla e cortado ao meio.",
               price: 37.0,
-              image: "../public/images/5.jpg",
+              image: "/images/5.jpg",
             },
             {
               id: "burger-frango",
@@ -261,7 +287,7 @@ export default {
               description:
                 "2 patties de frango de 100g empanados, pão brioche, queijo fatiado, alface americana, cenoura ralada, mostarda e maionese grill.",
               price: 30.0,
-              image: "../public/images/6.jpg",
+              image: "/images/6.jpg",
             },
             {
               id: "croqueta-don",
@@ -269,7 +295,7 @@ export default {
               description:
                 "06 unidades de 40g de Croqueta de Brisket (Peito Bovino) desfiado e tempero da casa, empanadas com farinha panko, servidas com maionese grill, molho barbecue e cebolinha fresca.",
               price: 35.0,
-              image: "../public/images/7.jpg",
+              image: "/images/7.jpg",
             },
             {
               id: "provoleta-don",
@@ -277,7 +303,7 @@ export default {
               description:
                 "250g de provolone na brasa com cobertura de tomate-cereja em rodelas e folhas de manjericão Fresco.",
               price: 35.0,
-              image: "../public/images/8.jpg",
+              image: "/images/8.jpg",
             },
             {
               id: "batata-don",
@@ -285,7 +311,7 @@ export default {
               description:
                 "400g de Batata frita palito crocante, finalizada com sal da casa, servida com 80g de Brisket (Peito Bovino) defumado desfiado, finalizada com cebolinha fresca e pimenta biquinho.",
               price: 40.0,
-              image: "../public/images/9.jpg",
+              image: "/images/9.jpg",
             },
             {
               id: "torresmo-don",
@@ -293,7 +319,7 @@ export default {
               description:
                 "250g de Panceta Suína defumada em rolo, finalizada na Fritadeira, servida com gomos de limão.",
               price: 30.0,
-              image: "../public/images/10.jpg",
+              image: "/images/10.jpg",
             },
             {
               id: "pao-alho-don",
@@ -301,7 +327,7 @@ export default {
               description:
                 "2 unidades de pão de alho Santa Massa® exclusivo para DONVITTÓRIO, assados na brasa.",
               price: 20.0,
-              image: "../public/images/11.jpg",
+              image: "/images/11.jpg",
             },
             {
               id: "queijo-coalho-don",
@@ -309,7 +335,7 @@ export default {
               description:
                 "200g de queijo coalho assado, finalizado ao melaço de cana, à moda DONVITTÓRIO.",
               price: 25.0,
-              image: "../public/images/12.jpg",
+              image: "/images/12.jpg",
             },
             {
               id: "batata-frita-grande",
@@ -317,7 +343,7 @@ export default {
               description:
                 "Porção de Batata frita palito crocante, finalizada com sal da casa.",
               price: 30.0,
-              image: "../public/images/13.jpg",
+              image: "/images/13.jpg",
             },
             {
               id: "farofa-don",
@@ -325,7 +351,7 @@ export default {
               description:
                 "100g da deliciosa Farofa do DON® , feita com farinha Panko, cebola tostada e manteiga de garrafa.",
               price: 8.0,
-              image: "../public/images/14.jpg",
+              image: "/images/14.jpg",
             },
           ],
         },
@@ -339,7 +365,7 @@ export default {
               description:
                 "250g (In natura) de steak de Picanha grill, finalizado com sal de parrilla. Acompanha 40g de Farofa do DON® e 40g de molho Chimichurri.",
               price: 60.0,
-              image: "../public/images/15.jpg",
+              image: "/images/15.jpg",
             },
             {
               id: "chorizo-don",
@@ -347,7 +373,7 @@ export default {
               description:
                 "250g (In natura) de steak de Chorizo grill, finalizado com sal de Parrilla. Acompanha 40g de Farofa do DON e 40g de molho Chimichurri.",
               price: 45.0,
-              image: "../public/images/16.jpg",
+              image: "/images/16.jpg",
             },
             {
               id: "galinhada-don-ter",
@@ -355,7 +381,7 @@ export default {
               description:
                 "300g da receita especial de galinhada, com o tempero especial de família do DON.",
               price: 20.0,
-              image: "../public/images/17.jpg",
+              image: "/images/17.jpg",
             },
             {
               id: "brisket-don-qua",
@@ -363,7 +389,7 @@ export default {
               description:
                 "250g do premiado Brisket (Peito Bovino) Angus, o 'rei do American Barbecue', defumado por 12 horas, finalizado com molho Barbecue. Acompanha 40g de Farofa do DON®.",
               price: 55.0,
-              image: "../public/images/18.jpg",
+              image: "/images/18.jpg",
             },
             {
               id: "galinhada-don-qui",
@@ -371,7 +397,7 @@ export default {
               description:
                 "300g da receita especial de galinhada, com o tempero especial de família do DON.",
               price: 20.0,
-              image: "../public/images/19.jpg",
+              image: "/images/19.jpg",
             },
             {
               id: "pulled-pork-qui",
@@ -379,7 +405,7 @@ export default {
               description:
                 "150g de Copa Lombo Suína defumada desfiada, pão brioche, molho Barbecue e 40g de Coleslaw (salada cítrica de cenoura, repolhos, maionese e mostarda).",
               price: 28.0,
-              image: "../public/images/20.jpg",
+              image: "/images/20.jpg",
             },
             {
               id: "pulled-pork-sex",
@@ -387,7 +413,7 @@ export default {
               description:
                 "150g de Copa Lombo Suína defumada desfiada, pão brioche, molho Barbecue e 40g de Coleslaw (salada cítrica de cenoura, repolhos, maionese e mostarda).",
               price: 28.0,
-              image: "../public/images/21.jpg",
+              image: "/images/21.jpg",
             },
           ],
         },
@@ -401,7 +427,7 @@ export default {
               description:
                 "Linha exclusiva, com cortes premium de carne bovina das raças ANGUS e WAGYU.",
               price: 0,
-              image: "../public/images/Don-Vittorio.png",
+              image: "/images/Don-Vittorio.png",
             },
           ],
         },
@@ -415,7 +441,7 @@ export default {
               description:
                 "Panqueca recheada com doce de leite La Serenissima®, selada à ferro na mesa. Acompanha sorvete de creme e hortelã fresco.",
               price: 26.0,
-              image: "../public/images/22.jpg",
+              image: "/images/22.jpg",
             },
           ],
         },
@@ -428,63 +454,63 @@ export default {
               name: "Soda do DON",
               description: "Soda italiana 300ml. Consulte sabores disponíveis.",
               price: 11.0,
-              image: "../public/images/23.jpg",
+              image: "/images/23.jpg",
             },
             {
               id: "suco-frutas",
               name: "Suco de frutas",
               description: "Garrafa 300ml. Consulte sabores disponíveis.",
               price: 7.0,
-              image: "../public/images/24.jpg",
+              image: "/images/24.jpg",
             },
             {
               id: "suco-uva",
               name: "Suco de uva integral",
               description: "Garrafa 300ml.",
               price: 13.0,
-              image: "../public/images/25.jpg",
+              image: "/images/25.jpg",
             },
             {
               id: "refrigerante",
               name: "Refrigerante",
               description: "Lata 310ml. Consulte opções disponíveis.",
               price: 7.0,
-              image: "../public/images/26.jpg",
+              image: "/images/26.jpg",
             },
             {
               id: "refrigerante-zero",
               name: "Refrigerante sem açúcar",
               description: "Lata 310ml. Consulte opções disponíveis.",
               price: 7.0,
-              image: "../public/images/27.jpg",
+              image: "/images/27.jpg",
             },
             {
               id: "sprite-lemon",
               name: "Sprite Lemon Fresh",
               description: "Garrafa 500ml.",
               price: 8.0,
-              image: "../public/images/28.jpg",
+              image: "/images/28.jpg",
             },
             {
               id: "energetico",
               name: "Energético",
               description: "Lata 473ml. Consulte opções disponíveis.",
               price: 14.0,
-              image: "../public/images/29.jpg",
+              image: "/images/29.jpg",
             },
             {
               id: "agua-mineral",
               name: "Água mineral",
               description: "Garrafa 500ml.",
               price: 5.0,
-              image: "../public/images/30.jpg",
+              image: "/images/30.jpg",
             },
             {
               id: "agua-com-gas",
               name: "Água com gás",
               description: "Garrafa 500ml.",
               price: 6.0,
-              image: "../public/images/31.jpg",
+              image: "/images/31.jpg",
             },
             {
               id: "cafe-expresso",
@@ -492,7 +518,7 @@ export default {
               description:
                 "Cápsula Nespresso®. Consulte opções disponíveis. Curto 40ml Longo 110ml",
               price: 8.0,
-              image: "../public/images/32.jpg",
+              image: "/images/32.jpg",
             },
           ],
         },
@@ -506,14 +532,14 @@ export default {
               description:
                 "Garrafa 600ml. Opções: Pilsen, IPA, Witbier e Golden.",
               price: 27.0,
-              image: "../public/images/33.jpg",
+              image: "/images/33.jpg",
             },
             {
               id: "long-neck",
               name: "Long neck",
               description: "Garrafa 330ml. Consulte opções disponíveis.",
               price: 12.0,
-              image: "../public/images/34.jpg",
+              image: "/images/34.jpg",
             },
             {
               id: "chopp-pilsen-quatro-poderes",
@@ -521,7 +547,7 @@ export default {
               description:
                 "A essência do estilo Pilsen original, com baixo teor alcoólico e sabor característico. Se destaca pela leveza, amargor marcante dos lúpulos tchecos e aromas de pão fresco do malte. Parceria exclusiva Quatro Poderes e DONVITTORIO.",
               price: 12.0,
-              image: "../public/images/35.jpg",
+              image: "/images/35.jpg",
             },
             {
               id: "chopp-ipa-quatro-poderes",
@@ -529,7 +555,7 @@ export default {
               description:
                 "Uma cerveja forte e aromática, com seu amargor pronunciado e aroma intenso de lúpulo, a IPA tornou-se um dos estilos mais populares entre os amantes de cerveja artesanal. Parceria exclusiva Quatro Poderes e DONVITTORIO.",
               price: 15.0,
-              image: "../public/images/36.jpg",
+              image: "/images/36.jpg",
             },
           ],
         },
@@ -543,7 +569,7 @@ export default {
               description:
                 "Vodka, água tônica, redução de maracujá e morango. (Imagem ilustrativa).",
               price: 38.0,
-              image: "../public/images/37.jpg",
+              image: "/images/37.jpg",
             },
             {
               id: "siciliana",
@@ -551,7 +577,7 @@ export default {
               description:
                 "Gin, bitter, limão siciliano e xarope de açúcar. (Imagem ilustrativa).",
               price: 28.0,
-              image: "../public/images/38.jpg",
+              image: "/images/38.jpg",
             },
             {
               id: "spritz",
@@ -559,7 +585,7 @@ export default {
               description:
                 "Aperol, espumante, água com gás. Servido com rodela de laranja.",
               price: 32.0,
-              image: "../public/images/39.jpg",
+              image: "/images/39.jpg",
             },
             {
               id: "moscow-mule",
@@ -567,7 +593,7 @@ export default {
               description:
                 "Vodka, espuma de gengibre, suco de limão. Finalizado com rodelas de limão.",
               price: 24.0,
-              image: "../public/images/40.jpg",
+              image: "/images/40.jpg",
             },
             {
               id: "caipiroska",
@@ -575,7 +601,7 @@ export default {
               description:
                 "Vodka, açúcar (ou adoçante), e fruta macerada. Servido com gelo. Sabores: Limão, Maracujá e Morango.",
               price: 26.0,
-              image: "../public/images/41.jpg",
+              image: "/images/41.jpg",
             },
             {
               id: "caipirinha",
@@ -583,7 +609,7 @@ export default {
               description:
                 "Cachaça, açúcar (ou adoçante), e fruta macerada. Servido com gelo. Sabores: Limão, Maracujá e Morango.",
               price: 20.0,
-              image: "../public/images/42.jpg",
+              image: "/images/42.jpg",
             },
             {
               id: "da-casa-gin",
@@ -591,7 +617,7 @@ export default {
               description:
                 "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
               price: 38.0,
-              image: "../public/images/43.jpg",
+              image: "/images/43.jpg",
             },
             {
               id: "da-casa-vodka",
@@ -599,7 +625,7 @@ export default {
               description:
                 "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
               price: 36.0,
-              image: "../public/images/44.jpg",
+              image: "/images/44.jpg",
             },
             {
               id: "da-casa-whisky",
@@ -607,7 +633,7 @@ export default {
               description:
                 "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
               price: 39.0,
-              image: "../public/images/45.jpg",
+              image: "/images/45.jpg",
             },
           ],
         },
@@ -621,7 +647,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 28.0,
-              image: "../public/images/46.jpg",
+              image: "/images/46.jpg",
             },
             {
               id: "whisky-old-parr",
@@ -629,7 +655,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 30.0,
-              image: "../public/images/47.jpg",
+              image: "/images/47.jpg",
             },
             {
               id: "whiskey-jack-daniels",
@@ -637,7 +663,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 38.0,
-              image: "../public/images/48.jpg",
+              image: "/images/48.jpg",
             },
             {
               id: "vodka-smirnoff",
@@ -645,7 +671,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 25.0,
-              image: "../public/images/49.jpg",
+              image: "/images/49.jpg",
             },
             {
               id: "cachaca-cabare",
@@ -653,7 +679,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 12.0,
-              image: "../public/images/50.jpg",
+              image: "/images/50.jpg",
             },
             {
               id: "cachaca-sagatiba",
@@ -661,7 +687,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 12.0,
-              image: "../public/images/51.jpg",
+              image: "/images/51.jpg",
             },
           ],
         },
@@ -675,19 +701,40 @@ export default {
               description:
                 "A Del Maipo® traz rótulos especialmente selecionados para uma combinação perfeita com os sabores do DON. | TROUXE SEU VINHO? Nossa taxa de rolha é de R$ 60,00.",
               price: 0,
-              image: "../public/images/Don-Vittorio.png",
+              image: "/images/Don-Vittorio.png",
             },
           ],
         },
       ],
     };
   },
+  computed: {
+    // Garantir que apenas uma categoria seja ativa por vez
+    activeCategoryId() {
+      return this.activeCategory;
+    }
+  },
   methods: {
     setActiveCategory(categoryId) {
-      this.activeCategory = categoryId;
+      // Garantir que apenas uma categoria seja selecionada por vez
+      if (this.activeCategory !== categoryId) {
+        this.activeCategory = categoryId;
+        // Fechar modal se estiver aberto ao trocar de categoria
+        if (this.showItemModal) {
+          this.closeItemModal();
+        }
+      }
     },
     updateLocation() {
       this.$router.push(`/menu/${this.selectedLocation}`);
+    },
+    selectItem(item) {
+      this.selectedItem = item;
+      this.showItemModal = true;
+    },
+    closeItemModal() {
+      this.showItemModal = false;
+      this.selectedItem = null;
     },
   },
   mounted() {
@@ -909,15 +956,28 @@ export default {
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  position: relative;
+  outline: none;
 }
 
-.category-btn:hover,
+.category-btn:hover:not(.active) {
+  background: rgba(255, 107, 53, 0.2);
+  border-color: rgba(255, 107, 53, 0.4);
+  transform: translateY(-1px);
+}
+
 .category-btn.active {
   background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   color: white;
   border-color: #ff6b35;
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+  z-index: 1;
+}
+
+.category-btn:focus {
+  outline: 2px solid #ff6b35;
+  outline-offset: 2px;
 }
 
 /* Info Section */
@@ -1245,8 +1305,8 @@ export default {
   }
 
   .menu-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
   }
 
   .category-nav {
@@ -1255,19 +1315,20 @@ export default {
 
   .nav-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
     padding: 0 0.5rem;
   }
 
   .category-btn {
     width: 100%;
-    padding: 0.75rem 0.5rem;
-    font-size: 0.85rem;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.7rem;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    border-radius: 15px;
   }
 
   .doneness-header {
@@ -1277,11 +1338,20 @@ export default {
   }
 
   .menu-item {
-    border-radius: 16px;
+    border-radius: 12px;
+    cursor: pointer;
   }
 
   .menu-image {
-    aspect-ratio: 16/10;
+    aspect-ratio: 1/1;
+  }
+
+  .menu-overlay {
+    opacity: 0;
+  }
+
+  .menu-item:hover .menu-overlay {
+    opacity: 0;
   }
 }
 
@@ -1329,7 +1399,8 @@ export default {
   }
 
   .menu-grid {
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
 
   .category-nav {
@@ -1337,15 +1408,15 @@ export default {
   }
 
   .nav-container {
-    grid-template-columns: 1fr;
-    gap: 0.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
     padding: 0;
   }
 
   .category-btn {
-    padding: 0.875rem 1rem;
-    font-size: 0.8rem;
-    border-radius: 20px;
+    padding: 0.5rem 0.25rem;
+    font-size: 0.65rem;
+    border-radius: 12px;
   }
 
   .menu-item {
@@ -1411,9 +1482,14 @@ export default {
     font-size: 0.95rem;
   }
 
+  .nav-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.3rem;
+  }
+
   .category-btn {
-    padding: 0.75rem 0.75rem;
-    font-size: 0.75rem;
+    padding: 0.4rem 0.2rem;
+    font-size: 0.6rem;
   }
 
   .info-content {
@@ -1440,10 +1516,203 @@ export default {
 /* Make overlays visible on touch devices where hover is not available */
 @media (hover: none) {
   .menu-overlay {
-    opacity: 1;
+    opacity: 0;
   }
   .overlay-content {
     padding: 1rem;
+  }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.modal-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+}
+
+.modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info {
+  padding: 2rem;
+}
+
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.modal-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 0 1.5rem 0;
+}
+
+.modal-price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff6b35;
+  margin-bottom: 1rem;
+}
+
+.modal-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Mobile Modal Styles */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 0.5rem;
+  }
+
+  .modal-content {
+    border-radius: 16px;
+    max-height: 95vh;
+  }
+
+  .modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 35px;
+    height: 35px;
+    font-size: 1.25rem;
+  }
+
+  .modal-image {
+    height: 200px;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .modal-info {
+    padding: 1.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.5rem;
+  }
+
+  .modal-description {
+    font-size: 0.95rem;
+  }
+
+  .modal-price {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 0.25rem;
+  }
+
+  .modal-content {
+    border-radius: 12px;
+  }
+
+  .modal-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .modal-image {
+    height: 180px;
+    border-radius: 12px 12px 0 0;
+  }
+
+  .modal-info {
+    padding: 1.25rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem;
+  }
+
+  .modal-description {
+    font-size: 0.9rem;
+  }
+
+  .modal-price {
+    font-size: 1.1rem;
+  }
+
+  .badge {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.65rem;
   }
 }
 </style>

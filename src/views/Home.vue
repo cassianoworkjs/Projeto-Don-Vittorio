@@ -9,9 +9,6 @@
       <div class="container">
         <div class="hero-content">
           <div class="hero-text">
-            <div class="brand-badge">
-              <span class="badge-text">PREMIUM</span>
-            </div>
             <h1 class="hero-title">
               <span class="title-main">Gastronomia</span>
               <span class="title-sub">premium</span>
@@ -35,16 +32,16 @@
           <div class="hero-visual">
             <div class="hero-gallery">
               <div class="hero-tile">
-                <img src="../public/images/11.jpg" alt="Ancho" />
+                <img src="/images/11.jpg" alt="Ancho" />
               </div>
               <div class="hero-tile">
-                <img src="../public/images/12.jpg" alt="Carreteiro" />
+                <img src="/images/12.jpg" alt="Carreteiro" />
               </div>
               <div class="hero-tile">
-                <img src="../public/images/13.jpg" alt="Costelinha" />
+                <img src="/images/13.jpg" alt="Costelinha" />
               </div>
               <div class="hero-tile">
-                <img src="../public/images/14.jpg" alt="Brisket" />
+                <img src="/images/14.jpg" alt="Brisket" />
               </div>
             </div>
           </div>
@@ -59,7 +56,7 @@
           <div class="story-visual">
             <div class="chef-card">
               <img
-                src="../public/images/Don Vittorio.jpg"
+                src="/images/Don Vittorio.jpg"
                 alt="Chef DON Vittorio"
                 class="chef-photo"
               />
@@ -139,13 +136,13 @@
             <div class="carousel-container">
               <div class="carousel" ref="carouselSudoeste">
                 <div class="carousel-item">
-                  <img src="../public/images/sudoeste.png" alt="Sudoeste 1">
+                  <img src="/images/sudoeste.png" alt="Sudoeste 1">
                 </div>
                 <div class="carousel-item">
-                  <img src="../public/images/sudoeste.png" alt="Sudoeste 2">
+                  <img src="/images/sudoeste.png" alt="Sudoeste 2">
                 </div>
                 <div class="carousel-item">
-                  <img src="../public/images/sudoeste.png" alt="Sudoeste 3">
+                  <img src="/images/sudoeste.png" alt="Sudoeste 3">
                 </div>
               </div>
               <button class="carousel-btn prev" @click="prevSlide('Sudoeste')">
@@ -172,10 +169,10 @@
             <div class="carousel-container">
               <div class="carousel" ref="carouselJardim">
                 <div class="carousel-item">
-                  <img src="../public/images/jardim-botanico.png" alt="Jardim Botânico 1">
+                  <img src="/images/jardim-botanico.png" alt="Jardim Botânico 1">
                 </div>
                 <div class="carousel-item">
-                  <img src="../public/images/jardim-botanico.png" alt="Jardim Botânico 2">
+                  <img src="/images/jardim-botanico.png" alt="Jardim Botânico 2">
                 </div>
               </div>
               <button class="carousel-btn prev" @click="prevSlide('Jardim')">
@@ -386,11 +383,6 @@ export default {
 
 .hero-text {
   max-width: 600px;
-}
-
-.brand-badge {
-  display: inline-block;
-  margin-bottom: 2rem;
 }
 
 .badge-text {
@@ -1110,6 +1102,7 @@ export default {
   .section-title, .cta h2 {
     font-size: 2.5rem;
   }
+  /* Mantém a galeria em 2 colunas no mobile */
   .hero-gallery {
     grid-template-columns: 1fr 1fr;
     grid-auto-rows: 140px;
@@ -1117,6 +1110,8 @@ export default {
     max-width: 420px;
     margin: 0 auto;
   }
+  /* Garante que o texto venha antes das imagens em mobile */
+
   .chef-story {
     padding: 4rem 0;
   }
@@ -1141,10 +1136,13 @@ export default {
   .unit-actions {
     flex-direction: column;
   }
+  /* Mantém 2x2 também em telas muito pequenas, ajustando a altura */
   .hero-gallery {
-    grid-template-columns: 1fr;
-    grid-auto-rows: 160px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 130px;
     width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
   }
   .chef-card {
     max-width: 280px;
