@@ -181,7 +181,7 @@ export default {
   data() {
     return {
       selectedLocation: "sudoeste",
-      activeCategory: "ponto-carne",
+      activeCategory: "don-todo-dia",
       selectedItem: null,
       showItemModal: false,
       categories: [
@@ -740,6 +740,11 @@ export default {
   mounted() {
     if (this.$route.params.location) {
       this.selectedLocation = this.$route.params.location;
+    }
+    
+    // Verificar se há parâmetro de categoria na URL
+    if (this.$route.query.category) {
+      this.activeCategory = this.$route.query.category;
     }
   },
 };

@@ -14,7 +14,7 @@
       <nav class="main-nav">
         <ul>
           <li><router-link to="/">Início</router-link></li>
-          <li><router-link to="/menu">Cardápio</router-link></li>
+          <li><router-link to="/menu?category=don-todo-dia">Cardápio</router-link></li>
           <li>
             <a href="https://wa.me/5561993173292?text=Oi%20DONVITTORIO" 
                target="_blank" 
@@ -24,7 +24,7 @@
             </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/donvittorio" 
+            <a href="https://www.instagram.com/donvittoriooficial" 
                target="_blank" 
                rel="noopener noreferrer" 
                class="social-btn instagram-btn">

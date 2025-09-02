@@ -8,28 +8,28 @@
       </div>
       <div class="container">
         <div class="hero-content">
-          <div class="hero-text">
-            <div class="hero-actions">
-              <router-link to="/menu" class="btn btn-primary">
-                <span class="btn-text">Ver Cardápio</span>
-                <span class="btn-icon">→</span>
-              </router-link>
-              <a href="#units" class="btn btn-secondary">
-                <span class="btn-text">Nossas Unidades</span>
-                <span class="btn-icon">↓</span>
-              </a>
-            </div>
-          </div>
-          <h1 class="hero-title">
-              <span class="title-main">Gastronomia</span>
-              <span class="title-sub">premium</span>
-              <span class="title-accent">feita no fogo.</span>
-            </h1>
-            <p class="hero-description">
-              O prazer da gastronomia premium, feita no fogo. Experimente e
-              sinta a diferença.
-            </p>
-          <div class="hero-visual">
+           <div class="hero-text">
+             <h1 class="hero-title">
+               <span class="title-main">Gastronomia</span>
+               <span class="title-sub">premium</span>
+               <span class="title-accent">feita no fogo.</span>
+             </h1>
+             <p class="hero-description">
+               O prazer da gastronomia premium, feita no fogo. Experimente e
+               sinta a diferença.
+             </p>
+             <div class="hero-actions">
+               <router-link to="/menu?category=don-todo-dia" class="btn btn-primary">
+                 <span class="btn-text">Ver Cardápio</span>
+                 <span class="btn-icon">→</span>
+               </router-link>
+               <a href="#units" class="btn btn-secondary">
+                 <span class="btn-text">Nossas Unidades</span>
+                 <span class="btn-icon">↓</span>
+               </a>
+             </div>
+           </div>
+            <div class="hero-visual">
             <div class="hero-gallery">
               <div class="hero-tile">
                 <img src="/images/11.jpg" alt="Ancho" />
@@ -210,7 +210,7 @@
           <p>
             Descubra nossos sabores exclusivos e se apaixone pela nossa cozinha
           </p>
-          <router-link to="/menu" class="btn btn-primary btn-large">
+          <router-link to="/menu?category=don-todo-dia" class="btn btn-primary btn-large">
             <span class="btn-text">Explore Nosso Cardápio</span>
             <span class="btn-icon">→</span>
           </router-link>
@@ -335,7 +335,7 @@ export default {
   position: relative;
   background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d2d2d 100%);
   color: white;
-  padding: 8rem 0 6rem;
+  padding: 4rem 0 6rem;
   overflow: hidden;
   min-height: 100vh;
   display: flex;
@@ -384,6 +384,7 @@ export default {
 
 .hero-text {
   max-width: 600px;
+  text-align: left;
 }
 
 .badge-text {
@@ -400,7 +401,7 @@ export default {
 
 .hero-title {
   margin: 0 0 1rem 0;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .title-main {
@@ -1028,6 +1029,7 @@ export default {
   border-radius: 8px;
   text-align: center;
   font-weight: bold;
+  font-size: 1.1rem;
   text-decoration: none;
   background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
   color: white;
@@ -1045,6 +1047,7 @@ export default {
   border-radius: 8px;
   text-align: center;
   font-weight: bold;
+  font-size: 1.1rem;
   text-decoration: none;
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
@@ -1091,6 +1094,18 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .hero-content {
+    gap: 2rem;
+  }
+  
+  .hero-text {
+    order: 1;
+  }
+  
+  .hero-visual {
+    order: 2;
+  }
+  
   .title-main {
     font-size: 2.5rem;
   }
@@ -1111,7 +1126,6 @@ export default {
     max-width: 420px;
     margin: 0 auto;
   }
-  /* Garante que o texto venha antes das imagens em mobile */
 
   .chef-story {
     padding: 4rem 0;
