@@ -10,7 +10,7 @@
             <span class="tagline">Comida de Fogo</span>
           </router-link>
         </div>
-        <img src="/images/logo.png" alt="Logo" class="logo-img">
+        <img src="/images/Don-Vittorio-capa.png" alt="Logo" class="logo-img">
       <nav class="main-nav">
         <ul>
           <li><router-link to="/">Início</router-link></li>

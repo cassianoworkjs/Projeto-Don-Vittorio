@@ -239,7 +239,7 @@ export default {
               description:
                 "300g do delicioso Arroz Carreteiro feito com Bacon, Linguiça Calabresa e Brisket (Peito Bovino) ou Cupim Defumados, Tomate Pelatti, Tempero da Casa. Finalizado com Cebolinha Fresca e Pimenta Biquinho.",
               price: 25.0,
-              image: "/images/0.jpg",
+              image: "/images/carreteiro_do_Don.jpg",
             },
             {
               id: "ancho-don",
@@ -247,7 +247,7 @@ export default {
               description:
                 "250g (In natura) de Steak de Ancho grill, finalizado com sal de parrilla. Acompanha 40g de Farofa do DON® e 40g de Molho Chimichurri.",
               price: 40.0,
-              image: "/images/1.jpg",
+              image: "/images/chorizo_do_Don.jpg",
             },
             {
               id: "costelinha-don",
@@ -255,7 +255,7 @@ export default {
               description:
                 "250g de Costelinha Suína defumada, finalizada com molho barbecue. Acompanha 40g de Farofa do DON®.",
               price: 40.0,
-              image: "/images/2.jpg",
+              image: "/images/costelinha_do_Don.jpg",
             },
             {
               id: "linguica-artesanal",
@@ -263,7 +263,7 @@ export default {
               description:
                 "300g de Linguiça de Costela bovina Angus Cara Preta® fininha, feita na brasa. Acompanha 40g de Farofa do DON® e 40g de molho chimichurri.",
               price: 40.0,
-              image: "/images/3.jpg",
+              image: "/images/linguicaArtesanal_do_Don.jpg",
             },
             {
               id: "burger-don",
@@ -271,7 +271,7 @@ export default {
               description:
                 "Hamburguer blend de 180g (in natura), pão brioche, queijo fatiado, maionese grill e molho barbecue, grelhado na Parrilla e cortado ao meio.",
               price: 34.0,
-              image: "/images/4.jpg",
+              image: "/images/burguer_do_Don.jpg",
             },
             {
               id: "burger-bacon-don",
@@ -279,7 +279,7 @@ export default {
               description:
                 "Hamburguer blend de 180g (in natura), pão brioche, queijo fatiado, bacon maionese grill e molho barbecue, grelhado na Parrilla e cortado ao meio.",
               price: 37.0,
-              image: "/images/5.jpg",
+              image: "/images/burguer_do_Don.jpg",
             },
             {
               id: "burger-frango",
@@ -287,7 +287,7 @@ export default {
               description:
                 "2 patties de frango de 100g empanados, pão brioche, queijo fatiado, alface americana, cenoura ralada, mostarda e maionese grill.",
               price: 30.0,
-              image: "/images/6.jpg",
+              image: "/images/burguerFrango_do_Don.jpg",
             },
             {
               id: "croqueta-don",
@@ -295,7 +295,7 @@ export default {
               description:
                 "06 unidades de 40g de Croqueta de Brisket (Peito Bovino) desfiado e tempero da casa, empanadas com farinha panko, servidas com maionese grill, molho barbecue e cebolinha fresca.",
               price: 35.0,
-              image: "/images/7.jpg",
+              image: "/images/brisket_do_Don.jpg",
             },
             {
               id: "provoleta-don",
@@ -303,7 +303,7 @@ export default {
               description:
                 "250g de provolone na brasa com cobertura de tomate-cereja em rodelas e folhas de manjericão Fresco.",
               price: 35.0,
-              image: "/images/8.jpg",
+              image: "/images/Coalho_do_Don.jpg",
             },
             {
               id: "batata-don",
@@ -311,7 +311,7 @@ export default {
               description:
                 "400g de Batata frita palito crocante, finalizada com sal da casa, servida com 80g de Brisket (Peito Bovino) defumado desfiado, finalizada com cebolinha fresca e pimenta biquinho.",
               price: 40.0,
-              image: "/images/9.jpg",
+              image: "/images/batata_do_Don.jpg",
             },
             {
               id: "torresmo-don",
@@ -319,7 +319,7 @@ export default {
               description:
                 "250g de Panceta Suína defumada em rolo, finalizada na Fritadeira, servida com gomos de limão.",
               price: 30.0,
-              image: "/images/10.jpg",
+              image: "/images/costelinha_do_Don.jpg",
             },
             {
               id: "pao-alho-don",
@@ -327,7 +327,7 @@ export default {
               description:
                 "2 unidades de pão de alho Santa Massa® exclusivo para DONVITTÓRIO, assados na brasa.",
               price: 20.0,
-              image: "/images/11.jpg",
+              image: "/images/paoDeAlho_do_Don.jpg",
             },
             {
               id: "queijo-coalho-don",
@@ -335,7 +335,7 @@ export default {
               description:
                 "200g de queijo coalho assado, finalizado ao melaço de cana, à moda DONVITTÓRIO.",
               price: 25.0,
-              image: "/images/12.jpg",
+              image: "/images/Coalho_do_Don.jpg",
             },
             {
               id: "batata-frita-grande",
@@ -343,7 +343,7 @@ export default {
               description:
                 "Porção de Batata frita palito crocante, finalizada com sal da casa.",
               price: 30.0,
-              image: "/images/13.jpg",
+              image: "/images/batata_frita.jpg",
             },
             {
               id: "farofa-don",
@@ -351,7 +351,7 @@ export default {
               description:
                 "100g da deliciosa Farofa do DON® , feita com farinha Panko, cebola tostada e manteiga de garrafa.",
               price: 8.0,
-              image: "/images/14.jpg",
+              image: "/images/farofa_do_Don.jpg",
             },
           ],
         },
@@ -365,7 +365,7 @@ export default {
               description:
                 "250g (In natura) de steak de Picanha grill, finalizado com sal de parrilla. Acompanha 40g de Farofa do DON® e 40g de molho Chimichurri.",
               price: 60.0,
-              image: "/images/15.jpg",
+              image: "/images/picanha_do_Don.jpg",
             },
             {
               id: "chorizo-don",
@@ -373,7 +373,7 @@ export default {
               description:
                 "250g (In natura) de steak de Chorizo grill, finalizado com sal de Parrilla. Acompanha 40g de Farofa do DON e 40g de molho Chimichurri.",
               price: 45.0,
-              image: "/images/16.jpg",
+              image: "/images/chorizo_do_Don.jpg",
             },
             {
               id: "galinhada-don-ter",
@@ -381,7 +381,7 @@ export default {
               description:
                 "300g da receita especial de galinhada, com o tempero especial de família do DON.",
               price: 20.0,
-              image: "/images/17.jpg",
+              image: "/images/galinhada_do_Don.jpg",
             },
             {
               id: "brisket-don-qua",
@@ -389,7 +389,7 @@ export default {
               description:
                 "250g do premiado Brisket (Peito Bovino) Angus, o 'rei do American Barbecue', defumado por 12 horas, finalizado com molho Barbecue. Acompanha 40g de Farofa do DON®.",
               price: 55.0,
-              image: "/images/18.jpg",
+              image: "/images/brisket_do_Don.jpg",
             },
             {
               id: "galinhada-don-qui",
@@ -397,7 +397,7 @@ export default {
               description:
                 "300g da receita especial de galinhada, com o tempero especial de família do DON.",
               price: 20.0,
-              image: "/images/19.jpg",
+              image: "/images/galinhada_do_Don.jpg",
             },
             {
               id: "pulled-pork-qui",
@@ -405,7 +405,7 @@ export default {
               description:
                 "150g de Copa Lombo Suína defumada desfiada, pão brioche, molho Barbecue e 40g de Coleslaw (salada cítrica de cenoura, repolhos, maionese e mostarda).",
               price: 28.0,
-              image: "/images/20.jpg",
+              image: "/images/pulledPork_do_Don.jpg",
             },
             {
               id: "pulled-pork-sex",
@@ -413,7 +413,7 @@ export default {
               description:
                 "150g de Copa Lombo Suína defumada desfiada, pão brioche, molho Barbecue e 40g de Coleslaw (salada cítrica de cenoura, repolhos, maionese e mostarda).",
               price: 28.0,
-              image: "/images/21.jpg",
+              image: "/images/pulledPork_do_Don.jpg",
             },
           ],
         },
@@ -441,7 +441,7 @@ export default {
               description:
                 "Panqueca recheada com doce de leite La Serenissima®, selada à ferro na mesa. Acompanha sorvete de creme e hortelã fresco.",
               price: 26.0,
-              image: "/images/22.jpg",
+              image: "/images/panqueca_do_Don.jpg",
             },
           ],
         },
@@ -454,63 +454,63 @@ export default {
               name: "Soda do DON",
               description: "Soda italiana 300ml. Consulte sabores disponíveis.",
               price: 11.0,
-              image: "/images/23.jpg",
+              image: "/images/soda_do_Don.jpg",
             },
             {
               id: "suco-frutas",
               name: "Suco de frutas",
               description: "Garrafa 300ml. Consulte sabores disponíveis.",
               price: 7.0,
-              image: "/images/24.jpg",
+              image: "/images/sucoDeFruta_do_Don.png",
             },
             {
               id: "suco-uva",
               name: "Suco de uva integral",
               description: "Garrafa 300ml.",
               price: 13.0,
-              image: "/images/25.jpg",
+              image: "/images/sucoDeUva_integral.jpg",
             },
             {
               id: "refrigerante",
               name: "Refrigerante",
               description: "Lata 310ml. Consulte opções disponíveis.",
               price: 7.0,
-              image: "/images/26.jpg",
+              image: "/images/coca_refrigerante.jpg",
             },
             {
               id: "refrigerante-zero",
               name: "Refrigerante sem açúcar",
               description: "Lata 310ml. Consulte opções disponíveis.",
               price: 7.0,
-              image: "/images/27.jpg",
+              image: "/images/cocaSem_refrigerante.jpg",
             },
             {
               id: "sprite-lemon",
               name: "Sprite Lemon Fresh",
               description: "Garrafa 500ml.",
               price: 8.0,
-              image: "/images/28.jpg",
+              image: "/images/sprite.jpg",
             },
             {
               id: "energetico",
               name: "Energético",
               description: "Lata 473ml. Consulte opções disponíveis.",
               price: 14.0,
-              image: "/images/29.jpg",
+              image: "/images/monster.jpg",
             },
             {
               id: "agua-mineral",
               name: "Água mineral",
               description: "Garrafa 500ml.",
               price: 5.0,
-              image: "/images/30.jpg",
+              image: "/images/agua.jpg",
             },
             {
               id: "agua-com-gas",
               name: "Água com gás",
               description: "Garrafa 500ml.",
               price: 6.0,
-              image: "/images/31.jpg",
+              image: "/images/agua.jpg",
             },
             {
               id: "cafe-expresso",
@@ -518,7 +518,7 @@ export default {
               description:
                 "Cápsula Nespresso®. Consulte opções disponíveis. Curto 40ml Longo 110ml",
               price: 8.0,
-              image: "/images/32.jpg",
+              image: "/images/cafe.jpg",
             },
           ],
         },
@@ -532,14 +532,14 @@ export default {
               description:
                 "Garrafa 600ml. Opções: Pilsen, IPA, Witbier e Golden.",
               price: 27.0,
-              image: "/images/33.jpg",
+              image: "/images/vinho_Bellavista.jpg",
             },
             {
               id: "long-neck",
               name: "Long neck",
               description: "Garrafa 330ml. Consulte opções disponíveis.",
               price: 12.0,
-              image: "/images/34.jpg",
+              image: "/images/lonkNeck.jpg",
             },
             {
               id: "chopp-pilsen-quatro-poderes",
@@ -547,7 +547,7 @@ export default {
               description:
                 "A essência do estilo Pilsen original, com baixo teor alcoólico e sabor característico. Se destaca pela leveza, amargor marcante dos lúpulos tchecos e aromas de pão fresco do malte. Parceria exclusiva Quatro Poderes e DONVITTORIO.",
               price: 12.0,
-              image: "/images/35.jpg",
+              image: "/images/chopp_pilsen.jpg",
             },
             {
               id: "chopp-ipa-quatro-poderes",
@@ -555,7 +555,7 @@ export default {
               description:
                 "Uma cerveja forte e aromática, com seu amargor pronunciado e aroma intenso de lúpulo, a IPA tornou-se um dos estilos mais populares entre os amantes de cerveja artesanal. Parceria exclusiva Quatro Poderes e DONVITTORIO.",
               price: 15.0,
-              image: "/images/36.jpg",
+              image: "/images/chopp_ipa.jpg",
             },
           ],
         },
@@ -569,7 +569,7 @@ export default {
               description:
                 "Vodka, água tônica, redução de maracujá e morango. (Imagem ilustrativa).",
               price: 38.0,
-              image: "/images/37.jpg",
+              image: "/images/vittorio_drink.jpg",
             },
             {
               id: "siciliana",
@@ -577,7 +577,7 @@ export default {
               description:
                 "Gin, bitter, limão siciliano e xarope de açúcar. (Imagem ilustrativa).",
               price: 28.0,
-              image: "/images/38.jpg",
+              image: "/images/siciliana.jpg",
             },
             {
               id: "spritz",
@@ -585,7 +585,7 @@ export default {
               description:
                 "Aperol, espumante, água com gás. Servido com rodela de laranja.",
               price: 32.0,
-              image: "/images/39.jpg",
+              image: "/images/spritz.jpg",
             },
             {
               id: "moscow-mule",
@@ -593,7 +593,7 @@ export default {
               description:
                 "Vodka, espuma de gengibre, suco de limão. Finalizado com rodelas de limão.",
               price: 24.0,
-              image: "/images/40.jpg",
+              image: "/images/moscow_mule.jpg",
             },
             {
               id: "caipiroska",
@@ -601,7 +601,7 @@ export default {
               description:
                 "Vodka, açúcar (ou adoçante), e fruta macerada. Servido com gelo. Sabores: Limão, Maracujá e Morango.",
               price: 26.0,
-              image: "/images/41.jpg",
+              image: "/images/caipiroska.jpg",
             },
             {
               id: "caipirinha",
@@ -609,7 +609,7 @@ export default {
               description:
                 "Cachaça, açúcar (ou adoçante), e fruta macerada. Servido com gelo. Sabores: Limão, Maracujá e Morango.",
               price: 20.0,
-              image: "/images/42.jpg",
+              image: "/images/caipirinha.jpg",
             },
             {
               id: "da-casa-gin",
@@ -617,7 +617,7 @@ export default {
               description:
                 "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
               price: 38.0,
-              image: "/images/43.jpg",
+              image: "/images/da_casa_gin.jpg",
             },
             {
               id: "da-casa-vodka",
@@ -625,7 +625,7 @@ export default {
               description:
                 "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
               price: 36.0,
-              image: "/images/44.jpg",
+              image: "/images/da_casa_vodka.jpg",
             },
             {
               id: "da-casa-whisky",
@@ -633,7 +633,7 @@ export default {
               description:
                 "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
               price: 39.0,
-              image: "/images/45.jpg",
+              image: "/images/da_casa_whisky.jpg",
             },
           ],
         },
@@ -647,7 +647,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 28.0,
-              image: "/images/46.jpg",
+              image: "/images/campari.jpg",
             },
             {
               id: "whisky-old-parr",
@@ -655,7 +655,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 30.0,
-              image: "/images/47.jpg",
+              image: "/images/old_parr.jpg",
             },
             {
               id: "whiskey-jack-daniels",
@@ -663,7 +663,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 38.0,
-              image: "/images/48.jpg",
+              image: "/images/jack_daniels.jpg",
             },
             {
               id: "vodka-smirnoff",
@@ -671,7 +671,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 25.0,
-              image: "/images/49.jpg",
+              image: "/images/smirnoff.jpg",
             },
             {
               id: "cachaca-cabare",
@@ -679,7 +679,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 12.0,
-              image: "/images/50.jpg",
+              image: "/images/cabare.jpg",
             },
             {
               id: "cachaca-sagatiba",
@@ -687,7 +687,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 12.0,
-              image: "/images/51.jpg",
+              image: "/images/sagatiba.jpg",
             },
           ],
         },

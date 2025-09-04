@@ -22,16 +22,16 @@
            <div class="hero-visual">
              <div class="hero-gallery">
                <div class="hero-tile">
-                 <img src="/images/11.jpg" alt="Ancho" />
+                 <img src="/images/paoDeAlho_do_Don.jpg" alt="Pão de Alho" />
                </div>
                <div class="hero-tile">
-                 <img src="/images/12.jpg" alt="Carreteiro" />
+                 <img src="/images/Coalho_do_Don.jpg" alt="Coalho" />
                </div>
                <div class="hero-tile">
-                 <img src="/images/13.jpg" alt="Costelinha" />
+                 <img src="/images/batata_frita.jpg" alt="Batata Frita" />
                </div>
                <div class="hero-tile">
-                 <img src="/images/14.jpg" alt="Brisket" />
+                 <img src="/images/brisket_do_Don.jpg" alt="Brisket" />
                </div>
              </div>
            </div>
@@ -56,7 +56,7 @@
           <div class="story-visual">
             <div class="chef-card">
               <img
-                src="/images/Don Vittorio.jpg"
+                src="/images/Don-Vittorio.png"
                 alt="Chef DON Vittorio"
                 class="chef-photo"
               />
