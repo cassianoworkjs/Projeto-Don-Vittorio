@@ -10,7 +10,7 @@
             <span class="tagline">Comida de Fogo</span>
           </router-link>
         </div>
-        <img src="/images/Don-Vittorio-capa.png" alt="Logo" class="logo-img">
+        <img src="/images/logo.png" alt="Logo" class="logo-img">
       <nav class="main-nav">
         <ul>
           <li><router-link to="/">Início</router-link></li>
@@ -79,7 +79,7 @@ export default {
 }
 
 .tagline {
-  font-size: 1rem;
+  font-size:1.5rem;
   color: #ccc;
 }
 
@@ -144,7 +144,7 @@ export default {
 
    .logo-img {
     display: block;
-    height: 60px;
+    height: 90px;
     width: auto;
     position: absolute;
     left: 50%;
@@ -153,14 +153,14 @@ export default {
   }
 
 .logo-text {
-  font-size: 2.5rem;
+  font-size: 3.0rem;
   font-weight: 900;
   color: #ff6b35;
   letter-spacing: -0.02em;
 }
 
 .logo-accent {
-  font-size: 2.5rem;
+  font-size: 3.0rem;
   font-weight: 900;
   color: white;
   letter-spacing: -0.02em;
