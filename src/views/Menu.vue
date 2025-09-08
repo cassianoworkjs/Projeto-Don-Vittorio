@@ -482,7 +482,7 @@ export default {
               description:
                 "Linha exclusiva, com cortes premium de carne bovina das raças ANGUS e WAGYU.",
               price: 0,
-              image: "/images/Don-Vittorio.png",
+              image: "/images/em_breve.png",
             },
           ],
         },
@@ -587,7 +587,7 @@ export default {
               description:
                 "Garrafa 600ml. Opções: Pilsen, IPA, Witbier e Golden.",
               price: 27.0,
-              image: "/images/vinho_Bellavista.jpg",
+              image: "/images/Baden_Baden.png",
             },
             {
               id: "long-neck",
@@ -743,7 +743,7 @@ export default {
               description:
                 "A Del Maipo® traz rótulos especialmente selecionados para uma combinação perfeita com os sabores do DON. | TROUXE SEU VINHO? Nossa taxa de rolha é de R$ 60,00.",
               price: 0,
-              image: "/images/Don-Vittorio.png",
+              image: "/images/consulte.png",
             },
           ],
         },
@@ -1536,7 +1536,28 @@ export default {
 
   
   .info-notes li {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
+  }
+
+  /* Keep info-notes header on one line in mobile */
+  .info-notes-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+  }
+
+  .info-notes h3 {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+
+  .info-notes-caret {
+    flex: 0 0 auto;
   }
 }
 

@@ -22,16 +22,16 @@
            <div class="hero-visual">
              <div class="hero-gallery">
                <div class="hero-tile">
-                 <img src="/images/paoDeAlho_do_Don.jpg" alt="Pão de Alho" />
+                 <img src="/images/Don-Vittorio-capa.png" alt="Don Capa" />
                </div>
                <div class="hero-tile">
-                 <img src="/images/Coalho_do_Don.jpg" alt="Coalho" />
+                 <img src="/images/Ancho_do_DON.png" alt="Ancho" />
                </div>
                <div class="hero-tile">
-                 <img src="/images/batata_frita.jpg" alt="Batata Frita" />
+                 <img src="/images/pulledPork_do_Don.jpg" alt="Pulled Pork" />
                </div>
                <div class="hero-tile">
-                 <img src="/images/brisket_do_Don.jpg" alt="Brisket" />
+                 <img src="/images/Coalho_do_Don.jpg" alt="Queijo Coalho" />
                </div>
              </div>
            </div>
