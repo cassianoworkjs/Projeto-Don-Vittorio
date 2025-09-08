@@ -22,8 +22,9 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Don Vittorio. Todos os direitos reservados.</p>
-      </div>
+         <p> &copy; 2025 GCG Tech. Todos os direitos reservados.</p>
+         <img src="/icon/gcgwb.ico" style="width:15px; height:15px; margin-top:10px;" alt="GCG Tech Icon">
+</div>
     </div>
   </footer>
 </template>
@@ -41,7 +42,17 @@ export default {
   padding: 2rem 0 1rem;
   margin-top: auto;
 }
+.footer-bottom {
+  color: #fff; 
+  padding: 20px 0; 
+  text-align: center; 
+  font-size: 14px;
+}
 
+
+.footer-bottom p {
+  margin: 0; 
+}
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;

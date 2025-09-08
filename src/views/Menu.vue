@@ -165,9 +165,12 @@
                       <div class="overlay-content">
                         <h3>{{ item.name }}</h3>
                         <p>{{ item.description }}</p>
-                        <span class="price"
-                          >R$ {{ item.price.toFixed(2) }}</span
+                        <span
+                          v-if="item.id !== 'vinhos-info' && item.price > 0"
+                          class="price"
                         >
+                          R$ {{ item.price.toFixed(2) }}
+                        </span>
                         <div class="overlay-badges">
                           <span v-if="item.combo" class="badge combo"
                             >Combo</span
@@ -207,7 +210,12 @@
         <div class="modal-info">
           <h2 class="modal-title">{{ selectedItem?.name }}</h2>
           <p class="modal-description">{{ selectedItem?.description }}</p>
-          <div class="modal-price">R$ {{ selectedItem?.price.toFixed(2) }}</div>
+          <div
+            v-if="selectedItem?.id !== 'vinhos-info' && (selectedItem?.price || 0) > 0"
+            class="modal-price"
+          >
+            R$ {{ selectedItem?.price.toFixed(2) }}
+          </div>
           <div class="modal-badges">
             <span v-if="selectedItem?.combo" class="badge combo">Combo</span>
             <span v-if="selectedItem?.price > 40" class="badge premium"
@@ -905,6 +913,7 @@ export default {
 
 .brand-section {
   flex: 1;
+  padding-left: 5.9rem;
 }
 
 .brand-logo {
@@ -942,6 +951,7 @@ export default {
   color: #ff6b35;
   margin: 0;
   letter-spacing: 0.05em;
+  padding-left: 0.9rem;
 }
 
 /* Location Selector */
@@ -1432,6 +1442,7 @@ export default {
   .brand-section {
     width: 100%;
     max-width: 100%;
+    padding-left: 0;
   }
 
   .main-title {
