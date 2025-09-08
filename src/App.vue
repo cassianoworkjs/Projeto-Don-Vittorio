@@ -5,6 +5,7 @@
       <router-view />
     </main>
     <Footer />
+
   </div>
 </template>
 
@@ -17,7 +18,17 @@ export default {
   components: {
     Header,
     Footer
-  }
+  },
+  data() {
+    return {
+      isDark: false
+    }
+  },
+  mounted() {
+    const saved = localStorage.getItem('theme')
+    this.isDark = saved === 'dark'
+    document.documentElement.classList.toggle('dark-mode', this.isDark)
+  },
 }
 </script>
 
@@ -31,7 +42,7 @@ export default {
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 10px;
-  background: transparent;
+  background: #f8f8f8;
   border: 0;
   outline: 0;
   vertical-align: baseline;
@@ -69,6 +80,40 @@ a {
 
 :focus {
   outline: none;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html.dark-mode body {
+  background: #0f0f0f;
+  color: #f0f0f0;
+}
+
+html.dark-mode a {
+  color: #ff6b35;
+}
+
+.theme-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  background: #ff6b35;
+  color: #fff;
+  border: none;
+  border-radius: 9999px;
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+html.dark-mode .theme-toggle {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
 }
 </style>
 

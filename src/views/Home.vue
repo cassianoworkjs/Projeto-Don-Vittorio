@@ -166,12 +166,18 @@
           <!-- Loja Jardim Botânico -->
           <div class="unit-card">
             <div class="carousel-container">
-              <div class="carousel" ref="carouselJardim">
+              <div class="carousel jardim-carousel" ref="carouselJardim">
                 <div class="carousel-item">
-                  <img src="/images/jardim-botanico.png" alt="Jardim Botânico 1">
+                  <img src="/images/jardim_botanico1.jpg" alt="Jardim Botânico 1">
                 </div>
                 <div class="carousel-item">
-                  <img src="/images/jardim-botanico.png" alt="Jardim Botânico 2">
+                  <img src="/images/jardim_botanico2.jpg" alt="Jardim Botânico 2">
+                </div>
+                <div class="carousel-item">
+                  <img src="/images/jardim_botanico3.jpg" alt="Jardim Botânico 3">
+                </div>
+                <div class="carousel-item">
+                  <img src="/images/jardim_botanico4.jpg" alt="Jardim Botânico 4">
                 </div>
               </div>
               <button class="carousel-btn prev" @click="prevSlide('Jardim')">
@@ -227,10 +233,22 @@ export default {
         Sudoeste: 0,
         Jardim: 0,
       },
+      autoPlayTimer: null,
     };
   },
   mounted() {
     this.initGalleryFilter();
+    // Garantir posição inicial dos carrosséis
+    this.updateCarousel('Sudoeste');
+    this.updateCarousel('Jardim');
+
+    // Autoplay apenas no mobile para o Jardim Botânico
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      this.startAutoPlayJardim();
+    }
+  },
+  beforeUnmount() {
+    this.stopAutoPlayJardim();
   },
   methods: {
     initGalleryFilter() {
@@ -291,6 +309,18 @@ export default {
           item.classList.add('active');
         }
       });
+    },
+    startAutoPlayJardim() {
+      this.stopAutoPlayJardim();
+      this.autoPlayTimer = setInterval(() => {
+        this.nextSlide('Jardim');
+      }, 3000);
+    },
+    stopAutoPlayJardim() {
+      if (this.autoPlayTimer) {
+        clearInterval(this.autoPlayTimer);
+        this.autoPlayTimer = null;
+      }
     },
   },
 };
@@ -947,6 +977,19 @@ export default {
 .carousel-item img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+}
+
+/* Jardim Botânico: mostrar imagem completa sem cortes */
+
+.jardim-carousel .carousel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.jardim-carousel .carousel-item img {
   object-fit: cover;
 }
 

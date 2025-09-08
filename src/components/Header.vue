@@ -192,32 +192,15 @@ export default {
      height: 48px;
      width: auto;
      margin: 0;
+     position: static;
+     transform: none;
    }
    
-       /* Mover logo para dentro do link no mobile */
-    .header-container .logo-img {
-      display: none;
-    }
-    .logo a .logo-img {
-      display: block;
-    }
+    /* Garantir logo visível no mobile e remover pseudo-elemento */
+    .header-container .logo-img { display: block; }
+    .logo a .logo-img { display: block; }
+    .logo a::after { content: none; }
     
-    /* Adicionar logo dentro do link no mobile */
-    .logo a::after {
-      content: '';
-      display: block;
-      width: 48px;
-      height: 48px;
-      background: url('../public/images/logo.png') no-repeat center;
-      background-size: contain;
-      margin-left: 1rem;
-    }
-    
-    /* Reset logo position for mobile */
-    .logo-img {
-      position: static;
-      transform: none;
-    }
 
   .menu-toggle {
     display: none;

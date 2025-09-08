@@ -981,8 +981,8 @@ export default {
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 500;
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+  background: rgba(10, 10, 10, 0.75);
+  color: #ff6b35;
   backdrop-filter: blur(10px);
   cursor: pointer;
   transition: all 0.3s ease;
@@ -991,15 +991,20 @@ export default {
 
 .location-selector select:hover {
   border-color: rgba(255, 107, 53, 0.5);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(10, 10, 10, 0.85);
+  color: #ff6b35;
 }
 
 .location-selector select:focus {
   outline: none;
   border-color: #ff6b35;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(10, 10, 10, 0.85);
+  color: #ff6b35;
 }
-
+.location-selector select option {
+  background: #1a1a1a;
+  color: #ff6b35;
+}
 .select-arrow {
   position: absolute;
   right: 1rem;
@@ -1014,7 +1019,7 @@ export default {
 /* Menu Content */
 .menu-content {
   padding: 5rem 0;
-  background: white;
+  background:white;
 }
 
 /* Category Navigation */
@@ -1466,6 +1471,10 @@ export default {
     min-width: auto;
     padding: 0.875rem 2.5rem 0.875rem 1.25rem;
     font-size: 0.95rem;
+    /* Garantir mesmas cores do desktop no mobile */
+    background: rgba(10, 10, 10, 0.75);
+    color: #ff6b35;
+    border-color: rgba(255, 255, 255, 0.2);
   }
 
   .logo-text,
