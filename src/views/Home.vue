@@ -168,17 +168,17 @@
             <div class="carousel-container">
               <div class="carousel jardim-carousel" ref="carouselJardim">
                 <div class="carousel-item">
-                  <img src="/images/jardim_botanico1.jpg" alt="Jardim Botânico 1">
+                  <img src="/images/jardim-botanico.png" alt="Jardim Botânico 1">
                 </div>
                 <div class="carousel-item">
-                  <img src="/images/jardim_botanico2.jpg" alt="Jardim Botânico 2">
+                  <img src="/images/jardim_botanico1.jpg" alt="Jardim Botânico ">
                 </div>
-                <div class="carousel-item">
+                <!-- <div class="carousel-item">
                   <img src="/images/jardim_botanico3.jpg" alt="Jardim Botânico 3">
                 </div>
                 <div class="carousel-item">
                   <img src="/images/jardim_botanico4.jpg" alt="Jardim Botânico 4">
-                </div>
+                </div> -->
               </div>
               <button class="carousel-btn prev" @click="prevSlide('Jardim')">
                 <span class="chevron">&#x2329;</span>
