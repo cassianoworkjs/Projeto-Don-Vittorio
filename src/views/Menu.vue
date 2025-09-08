@@ -127,6 +127,7 @@
                   v-for="item in category.items"
                   :key="item.id"
                   class="menu-item"
+                  :class="{ 'menu-item--constrained': item.id === 'panqueca-don' }"
                   @click="selectItem(item)"
                 >
                   <div class="menu-image">
@@ -273,7 +274,7 @@ export default {
               description:
                 "250g (In natura) de Steak de Ancho grill, finalizado com sal de parrilla. Acompanha 40g de Farofa do DON® e 40g de Molho Chimichurri.",
               price: 40.0,
-              image: "/images/chorizo_do_Don.jpg",
+              image: "/images/Ancho_do_DON.png",
             },
             {
               id: "costelinha-don",
@@ -321,7 +322,7 @@ export default {
               description:
                 "06 unidades de 40g de Croqueta de Brisket (Peito Bovino) desfiado e tempero da casa, empanadas com farinha panko, servidas com maionese grill, molho barbecue e cebolinha fresca.",
               price: 35.0,
-              image: "/images/brisket_do_Don.jpg",
+              image: "/images/croqueta_do_don.png",
             },
             {
               id: "provoleta-don",
@@ -329,7 +330,7 @@ export default {
               description:
                 "250g de provolone na brasa com cobertura de tomate-cereja em rodelas e folhas de manjericão Fresco.",
               price: 35.0,
-              image: "/images/Coalho_do_Don.jpg",
+              image: "/images/Provoleta_do_Don.png",
             },
             {
               id: "batata-don",
@@ -345,7 +346,7 @@ export default {
               description:
                 "250g de Panceta Suína defumada em rolo, finalizada na Fritadeira, servida com gomos de limão.",
               price: 30.0,
-              image: "/images/costelinha_do_Don.jpg",
+              image: "/images/Torresmo_do_DON.png",
             },
             {
               id: "pao-alho-don",
@@ -515,7 +516,7 @@ export default {
               name: "Sprite Lemon Fresh",
               description: "Garrafa 500ml.",
               price: 8.0,
-              image: "/images/sprite.jpg",
+              image: "/images/Sprite_Lemon_Fresh.jpeg",
             },
             {
               id: "energetico",
@@ -544,7 +545,7 @@ export default {
               description:
                 "Cápsula Nespresso®. Consulte opções disponíveis. Curto 40ml Longo 110ml",
               price: 8.0,
-              image: "/images/cafe.jpg",
+              image: "/images/café_expresso.png",
             },
           ],
         },
@@ -573,7 +574,7 @@ export default {
               description:
                 "A essência do estilo Pilsen original, com baixo teor alcoólico e sabor característico. Se destaca pela leveza, amargor marcante dos lúpulos tchecos e aromas de pão fresco do malte. Parceria exclusiva Quatro Poderes e DONVITTORIO.",
               price: 12.0,
-              image: "/images/chopp_pilsen.jpg",
+              image: "/images/Chopp_Pilsen_Quatro_Poderes.png",
             },
             {
               id: "chopp-ipa-quatro-poderes",
@@ -581,7 +582,7 @@ export default {
               description:
                 "Uma cerveja forte e aromática, com seu amargor pronunciado e aroma intenso de lúpulo, a IPA tornou-se um dos estilos mais populares entre os amantes de cerveja artesanal. Parceria exclusiva Quatro Poderes e DONVITTORIO.",
               price: 15.0,
-              image: "/images/chopp_ipa.jpg",
+              image: "/images/Chopp_IPA_Quatro_Poderes.png",
             },
           ],
         },
@@ -595,7 +596,7 @@ export default {
               description:
                 "Vodka, água tônica, redução de maracujá e morango. (Imagem ilustrativa).",
               price: 38.0,
-              image: "/images/vittorio_drink.jpg",
+              image: "/images/Vittório.png",
             },
             {
               id: "siciliana",
@@ -603,7 +604,7 @@ export default {
               description:
                 "Gin, bitter, limão siciliano e xarope de açúcar. (Imagem ilustrativa).",
               price: 28.0,
-              image: "/images/siciliana.jpg",
+              image: "/images/Siciliana.png",
             },
             {
               id: "spritz",
@@ -611,7 +612,7 @@ export default {
               description:
                 "Aperol, espumante, água com gás. Servido com rodela de laranja.",
               price: 32.0,
-              image: "/images/spritz.jpg",
+              image: "/images/Spritz.png",
             },
             {
               id: "moscow-mule",
@@ -619,7 +620,7 @@ export default {
               description:
                 "Vodka, espuma de gengibre, suco de limão. Finalizado com rodelas de limão.",
               price: 24.0,
-              image: "/images/moscow_mule.jpg",
+              image: "/images/Moscow_mule.png",
             },
             {
               id: "caipiroska",
@@ -627,7 +628,7 @@ export default {
               description:
                 "Vodka, açúcar (ou adoçante), e fruta macerada. Servido com gelo. Sabores: Limão, Maracujá e Morango.",
               price: 26.0,
-              image: "/images/caipiroska.jpg",
+              image: "/images/Caipiroska.png",
             },
             {
               id: "caipirinha",
@@ -635,32 +636,37 @@ export default {
               description:
                 "Cachaça, açúcar (ou adoçante), e fruta macerada. Servido com gelo. Sabores: Limão, Maracujá e Morango.",
               price: 20.0,
-              image: "/images/caipirinha.jpg",
+              image: "/images/Caipirinha.png",
             },
             {
               id: "da-casa-gin",
-              name: "Da Casa® - Gin",
+              name: "Da Casa® ",
               description:
-                "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
+                `Da Casa® - Vodka
+                Da Casa® - Gin
+                Da Casa® - Whisky
+                Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.`,
               price: 38.0,
-              image: "/images/da_casa_gin.jpg",
+              image: "/images/Da_Casa.png",
             },
-            {
-              id: "da-casa-vodka",
-              name: "Da Casa® - Vodka",
-              description:
-                "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
-              price: 36.0,
-              image: "/images/da_casa_vodka.jpg",
-            },
-            {
-              id: "da-casa-whisky",
-              name: "Da Casa® - Whisky",
-              description:
-                "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
-              price: 39.0,
-              image: "/images/da_casa_whisky.jpg",
-            },
+            // {
+            //   id: "da-casa-vodka",
+            //   name: "Da Casa® - Vodka",
+            //   name: "Da Casa® - Whisky",
+              
+            //   description:
+            //     "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
+            //   price: 36.0,
+            //   image: "/images/da_casa_vodka.jpg",
+            // },
+            // {
+            //   id: "da-casa-whisky",
+            //   name: "Da Casa® - Whisky",
+            //   description:
+            //     "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
+            //   price: 39.0,
+            //   image: "/images/da_casa_whisky.jpg",
+            // },
           ],
         },
         {
@@ -673,7 +679,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 28.0,
-              image: "/images/campari.jpg",
+              image: "/images/Campari.jpg",
             },
             {
               id: "whisky-old-parr",
@@ -681,7 +687,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 30.0,
-              image: "/images/old_parr.jpg",
+              image: "/images/Old_Parr.jpg",
             },
             {
               id: "whiskey-jack-daniels",
@@ -689,7 +695,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 38.0,
-              image: "/images/jack_daniels.jpg",
+              image: "/images/Whisky_Jack_Daniels.jpg",
             },
             {
               id: "vodka-smirnoff",
@@ -697,7 +703,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 25.0,
-              image: "/images/smirnoff.jpg",
+              image: "/images/Smirnoff.jpg",
             },
             {
               id: "cachaca-cabare",
@@ -705,7 +711,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 12.0,
-              image: "/images/cabare.jpg",
+              image: "/images/cachaça_cabaré.jpg",
             },
             {
               id: "cachaca-sagatiba",
@@ -713,7 +719,7 @@ export default {
               description:
                 "Escolha sua opção. Dose 50 ml. (Imagem ilustrativa).",
               price: 12.0,
-              image: "/images/sagatiba.jpg",
+              image: "/images/Cachaça_Sagatiba.png",
             },
           ],
         },
@@ -1169,6 +1175,14 @@ export default {
   background: white;
 }
 
+.menu-item.menu-item--constrained {
+  width: 560px;
+  max-width: 100%;
+  justify-self: start;
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .menu-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
@@ -1402,6 +1416,12 @@ export default {
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 0.75rem;
+  }
+
+  .menu-item.menu-item--constrained {
+    width: 100%;
+    justify-self: stretch;
+    margin-right: auto;
   }
 
   .hint-label-container {

@@ -815,7 +815,6 @@ export default {
  }
 
  .welcome-message {
-   background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
    color: white;
    padding: 1.5rem 2rem;
    border-radius: 25px;
@@ -823,17 +822,17 @@ export default {
    font-weight: 600;
    text-transform: uppercase;
    letter-spacing: 0.1em;
-   box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
    text-align: center;
    transition: all 0.3s ease;
    display: inline-block;
+   animation: pulse 1.5s infinite;
  }
 
-.welcome-message:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+ @keyframes pulse {
+  0%   { transform: scale(0.95); opacity: 0.8; }
+  50%  { transform: scale(1);    opacity: 1;   }
+  100% { transform: scale(0.95); opacity: 0.8; }
 }
-
 .achievements-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
