@@ -55,6 +55,33 @@
           </div>
         </nav>
 
+        <!-- Important Notes -->
+        <div
+          class="info-notes"
+          :class="{ opened: showInfoNotes }"
+          role="button"
+          tabindex="0"
+          @click="toggleInfoNotes"
+          @keyup.enter.space="toggleInfoNotes"
+          aria-expanded="showInfoNotes"
+          aria-controls="info-notes-list"
+        >
+          <div class="info-notes-header">
+            <h3>Informações importantes</h3>
+            <span class="info-notes-caret" :class="{ rotated: showInfoNotes }">▼</span>
+          </div>
+          <ul id="info-notes-list" v-show="showInfoNotes">
+            <li>O tempo de preparo varia conforme o prato e a fila de pedidos.</li>
+            <li>Adicionais: Extra burger R$ 15.</li>
+            <li>Molhos (Chimichurri, Barbecue, Maionese grill, Mostarda, Catchup) R$ 3.</li>
+            <li>Embalagem para viagem R$ 3.</li>
+            <li>A taxa de serviço é opcional.</li>
+            <li>Incentivamos a acrescentar 10% ao valor final de sua conta, como agradecimento ao nosso time.</li>
+            <li>Sugestões: Entre em contato conosco através de nossos canais digitais.</li>
+            <li>Agradecemos a preferência.</li>
+          </ul>
+        </div>
+
         <!-- Menu Items Gallery -->
         <div class="menu-gallery">
           <div
@@ -211,6 +238,7 @@ export default {
       selectedItem: null,
       showItemModal: false,
       isMobile: false, // NEW: State to track if it's a mobile device
+      showInfoNotes: false,
       categories: [
         {
           id: "ponto-carne",
@@ -649,24 +677,6 @@ export default {
               price: 38.0,
               image: "/images/Da_Casa.png",
             },
-            // {
-            //   id: "da-casa-vodka",
-            //   name: "Da Casa® - Vodka",
-            //   name: "Da Casa® - Whisky",
-              
-            //   description:
-            //     "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
-            //   price: 36.0,
-            //   image: "/images/da_casa_vodka.jpg",
-            // },
-            // {
-            //   id: "da-casa-whisky",
-            //   name: "Da Casa® - Whisky",
-            //   description:
-            //     "Opções exclusivas de drinks com destilados produzidos pela casa. Consulte as opções.",
-            //   price: 39.0,
-            //   image: "/images/da_casa_whisky.jpg",
-            // },
           ],
         },
         {
@@ -771,6 +781,9 @@ export default {
     // NEW: Function to check if it's a mobile device
     checkMobile() {
       this.isMobile = window.innerWidth <= 768;
+    },
+    toggleInfoNotes() {
+      this.showInfoNotes = !this.showInfoNotes;
     },
   },
   mounted() {
@@ -997,6 +1010,54 @@ export default {
 /* Category Navigation */
 .category-nav {
   margin-bottom: 4rem;
+}
+
+/* Important Notes */
+.info-notes {
+  background: rgba(255, 107, 53, 0.06);
+  border: 1px solid rgba(255, 107, 53, 0.25);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  color: #333;
+  margin: -2rem 0 2rem 0;
+  cursor: pointer;
+}
+
+.info-notes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.info-notes h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff6b35;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-notes-caret {
+  font-size: 0.9rem;
+  color: #ff6b35;
+  transition: transform 0.2s ease;
+}
+
+.info-notes-caret.rotated {
+  transform: rotate(180deg);
+}
+
+.info-notes ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.info-notes li {
+  margin: 0.25rem 0;
+  line-height: 1.5;
+  font-size: 1rem;
 }
 
 .nav-container {
@@ -1471,6 +1532,11 @@ export default {
 
   .menu-item:hover .menu-overlay {
     opacity: 0;
+  }
+
+  
+  .info-notes li {
+    font-size: 0.6rem;
   }
 }
 
