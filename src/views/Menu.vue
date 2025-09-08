@@ -115,45 +115,53 @@
 
             <!-- Regular Menu Items -->
             <div v-else>
-              <div class="tap-hint" aria-hidden="true">
-                <span class="tap-emoji">👆</span>
-                <span class="tap-text">Toque na foto para ver detalhes</span>
+              <!-- NEW: Indicators for mobile -->
+              <div v-if="isMobile" class="hint-label-container">
+                <span class="hint-label">
+                  <span class="hint-icon"></span>
+                  Toque para ver detalhes
+                </span>
               </div>
               <div class="menu-grid">
-              <div
-                v-for="item in category.items"
-                :key="item.id"
-                class="menu-item"
-                @click="selectItem(item)"
-              >
-                <div class="menu-image">
-                  <img :src="item.image" :alt="item.name" />
-                  <div v-if="showTapHint" class="tap-indicator" aria-hidden="true">
-                    <span class="tap-indicator__icon">👆</span>
-                  </div>
-                  <div class="menu-overlay">
-                    <div class="overlay-content">
-                      <h3>{{ item.name }}</h3>
-                      <p>{{ item.description }}</p>
-                      <span class="price">R$ {{ item.price.toFixed(2) }}</span>
-                      <div class="overlay-badges">
-                        <span v-if="item.combo" class="badge combo">Combo</span>
-                        <span v-if="item.price > 40" class="badge premium"
-                          >Premium</span
+                <div
+                  v-for="item in category.items"
+                  :key="item.id"
+                  class="menu-item"
+                  @click="selectItem(item)"
+                >
+                  <div class="menu-image">
+                    <img :src="item.image" :alt="item.name" />
+                    
+
+                    <div class="menu-overlay">
+                      <div class="overlay-content">
+                        <h3>{{ item.name }}</h3>
+                        <p>{{ item.description }}</p>
+                        <span class="price"
+                          >R$ {{ item.price.toFixed(2) }}</span
                         >
-                        <span v-if="item.price <= 20" class="badge tradicional"
-                          >Tradicional</span
-                        >
-                        <span
-                          v-if="item.price > 20 && item.price <= 40"
-                          class="badge especial"
-                          >Especial</span
-                        >
+                        <div class="overlay-badges">
+                          <span v-if="item.combo" class="badge combo"
+                            >Combo</span
+                          >
+                          <span v-if="item.price > 40" class="badge premium"
+                            >Premium</span
+                          >
+                          <span
+                            v-if="item.price <= 20"
+                            class="badge tradicional"
+                            >Tradicional</span
+                          >
+                          <span
+                            v-if="item.price > 20 && item.price <= 40"
+                            class="badge especial"
+                            >Especial</span
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
               </div>
             </div>
           </div>
@@ -174,9 +182,17 @@
           <div class="modal-price">R$ {{ selectedItem?.price.toFixed(2) }}</div>
           <div class="modal-badges">
             <span v-if="selectedItem?.combo" class="badge combo">Combo</span>
-            <span v-if="selectedItem?.price > 40" class="badge premium">Premium</span>
-            <span v-if="selectedItem?.price <= 20" class="badge tradicional">Tradicional</span>
-            <span v-if="selectedItem?.price > 20 && selectedItem?.price <= 40" class="badge especial">Especial</span>
+            <span v-if="selectedItem?.price > 40" class="badge premium"
+              >Premium</span
+            >
+            <span v-if="selectedItem?.price <= 20" class="badge tradicional"
+              >Tradicional</span
+            >
+            <span
+              v-if="selectedItem?.price > 20 && selectedItem?.price <= 40"
+              class="badge especial"
+              >Especial</span
+            >
           </div>
         </div>
       </div>
@@ -193,7 +209,7 @@ export default {
       activeCategory: "don-todo-dia",
       selectedItem: null,
       showItemModal: false,
-      showTapHint: true,
+      isMobile: false, // NEW: State to track if it's a mobile device
       categories: [
         {
           id: "ponto-carne",
@@ -722,7 +738,7 @@ export default {
     // Garantir que apenas uma categoria seja ativa por vez
     activeCategoryId() {
       return this.activeCategory;
-    }
+    },
   },
   methods: {
     setActiveCategory(categoryId) {
@@ -739,9 +755,6 @@ export default {
       this.$router.push(`/menu/${this.selectedLocation}`);
     },
     selectItem(item) {
-      if (this.showTapHint) {
-        this.showTapHint = false;
-      }
       this.selectedItem = item;
       this.showItemModal = true;
     },
@@ -749,21 +762,27 @@ export default {
       this.showItemModal = false;
       this.selectedItem = null;
     },
+    // NEW: Function to check if it's a mobile device
+    checkMobile() {
+      this.isMobile = window.innerWidth <= 768;
+    },
   },
   mounted() {
     if (this.$route.params.location) {
       this.selectedLocation = this.$route.params.location;
     }
-    
+
     // Verificar se há parâmetro de categoria na URL
     if (this.$route.query.category) {
       this.activeCategory = this.$route.query.category;
     }
 
-    // Ocultar a dica automaticamente após alguns segundos (mobile)
-    setTimeout(() => {
-      this.showTapHint = false;
-    }, 4000);
+    // NEW: Check for mobile on mount and resize
+    this.checkMobile();
+    window.addEventListener("resize", this.checkMobile);
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", this.checkMobile);
   },
 };
 </script>
@@ -779,6 +798,21 @@ export default {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
   }
 }
 
@@ -1126,19 +1160,6 @@ export default {
   gap: 2rem;
 }
 
-.tap-hint {
-  display: none;
-  align-items: center;
-  gap: 0.5rem;
-  color: #666;
-  font-size: 0.95rem;
-  margin: 0 0 0.75rem 0.25rem;
-}
-
-.tap-emoji {
-  font-size: 1.1rem;
-}
-
 .menu-item {
   position: relative;
   border-radius: 20px;
@@ -1157,32 +1178,6 @@ export default {
   position: relative;
   aspect-ratio: 4/3;
   overflow: hidden;
-}
-
-.tap-indicator {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  border-radius: 999px;
-  padding: 6px 8px;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  animation: tapPulse 1.2s ease-in-out infinite;
-}
-
-.tap-indicator__icon {
-  font-size: 14px;
-  line-height: 1;
-}
-
-@keyframes tapPulse {
-  0% { transform: translateY(0); opacity: 0.85; }
-  50% { transform: translateY(-2px); opacity: 1; }
-  100% { transform: translateY(0); opacity: 0.85; }
 }
 
 .menu-image img {
@@ -1280,6 +1275,44 @@ export default {
   color: white;
 }
 
+/* NEW: General Hint Label for Mobile */
+.hint-label-container {
+  display: none;
+  justify-content: center;
+  margin: 0 0 1rem 0;
+  color: #666;
+}
+
+.hint-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  animation: pulse 1.5s infinite;
+}
+
+.hint-icon {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ff6b35;
+  border-radius: 50%;
+  background-color: transparent;
+  animation: ripple 1.5s infinite;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* removed info-indicator styles */
+
 /* Responsive Design */
 @media (max-width: 1024px) {
   .container {
@@ -1371,7 +1404,7 @@ export default {
     gap: 0.75rem;
   }
 
-  .tap-hint {
+  .hint-label-container {
     display: flex;
   }
 
@@ -1418,10 +1451,6 @@ export default {
 
   .menu-item:hover .menu-overlay {
     opacity: 0;
-  }
-
-  .tap-indicator {
-    display: flex;
   }
 }
 
@@ -1517,8 +1546,8 @@ export default {
   }
 
   .badge {
-    padding: 0.2rem 0.6rem;
-    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.65rem;
   }
 
   .doneness-item {
