@@ -114,7 +114,12 @@
             </div>
 
             <!-- Regular Menu Items -->
-            <div v-else class="menu-grid">
+            <div v-else>
+              <div class="tap-hint" aria-hidden="true">
+                <span class="tap-emoji">👆</span>
+                <span class="tap-text">Toque na foto para ver detalhes</span>
+              </div>
+              <div class="menu-grid">
               <div
                 v-for="item in category.items"
                 :key="item.id"
@@ -123,6 +128,9 @@
               >
                 <div class="menu-image">
                   <img :src="item.image" :alt="item.name" />
+                  <div v-if="showTapHint" class="tap-indicator" aria-hidden="true">
+                    <span class="tap-indicator__icon">👆</span>
+                  </div>
                   <div class="menu-overlay">
                     <div class="overlay-content">
                       <h3>{{ item.name }}</h3>
@@ -145,6 +153,7 @@
                     </div>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           </div>
@@ -184,6 +193,7 @@ export default {
       activeCategory: "don-todo-dia",
       selectedItem: null,
       showItemModal: false,
+      showTapHint: true,
       categories: [
         {
           id: "ponto-carne",
@@ -729,6 +739,9 @@ export default {
       this.$router.push(`/menu/${this.selectedLocation}`);
     },
     selectItem(item) {
+      if (this.showTapHint) {
+        this.showTapHint = false;
+      }
       this.selectedItem = item;
       this.showItemModal = true;
     },
@@ -746,6 +759,11 @@ export default {
     if (this.$route.query.category) {
       this.activeCategory = this.$route.query.category;
     }
+
+    // Ocultar a dica automaticamente após alguns segundos (mobile)
+    setTimeout(() => {
+      this.showTapHint = false;
+    }, 4000);
   },
 };
 </script>
@@ -1108,6 +1126,19 @@ export default {
   gap: 2rem;
 }
 
+.tap-hint {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem 0.25rem;
+}
+
+.tap-emoji {
+  font-size: 1.1rem;
+}
+
 .menu-item {
   position: relative;
   border-radius: 20px;
@@ -1126,6 +1157,32 @@ export default {
   position: relative;
   aspect-ratio: 4/3;
   overflow: hidden;
+}
+
+.tap-indicator {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 8px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  animation: tapPulse 1.2s ease-in-out infinite;
+}
+
+.tap-indicator__icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+@keyframes tapPulse {
+  0% { transform: translateY(0); opacity: 0.85; }
+  50% { transform: translateY(-2px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.85; }
 }
 
 .menu-image img {
@@ -1314,6 +1371,10 @@ export default {
     gap: 0.75rem;
   }
 
+  .tap-hint {
+    display: flex;
+  }
+
   .category-nav {
     margin-bottom: 2.5rem;
   }
@@ -1357,6 +1418,10 @@ export default {
 
   .menu-item:hover .menu-overlay {
     opacity: 0;
+  }
+
+  .tap-indicator {
+    display: flex;
   }
 }
 
